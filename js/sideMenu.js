@@ -1,7 +1,7 @@
 // 選單 ID 
 const menuList = ['lcList', 'negotiationList', 'acceptNegotiation', 'checkNegotiation', 'setGroup', 'setBeneficiary', 'setLcTable', 'accountManager', 'roleManager', 'branchManager'];
 
-$("#main-content").load("/pages/lcList.html #lcList");
+$("#main-content").load("./pages/lcList.html #lcList");
 // 選單操作
 menuList.forEach(menu => {
   this[`${menu}tab`] = document.querySelector(`#${menu}`);
@@ -14,7 +14,7 @@ menuList.forEach(menu => {
     this.clearAction();
     event.target.classList.add('active');
 
-    $("#main-content").load(`/pages/${menu}.html #${menu}`);
+    $("#main-content").load(`./pages/${menu}.html #${menu}`);
   });
 });
 
