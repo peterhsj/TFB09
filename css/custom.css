@@ -10194,6 +10194,7 @@ footer {
   padding: 66px 0 32px;
   width: 300px;
   /* Height of navbar */
+  background-color: #e6e6e6;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -10244,6 +10245,8 @@ footer {
 .content__wrapper {
   width: calc(100% - 300px);
   margin-left: 300px;
+  padding-top: 66px;
+  padding-bottom: 32px;
 }
 
 .fs-1-5 {
