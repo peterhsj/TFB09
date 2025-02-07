@@ -1,21 +1,22 @@
 // 選單 ID 
 const menuList = ['lcList', 'negotiationList', 'acceptNegotiation', 'checkNegotiation', 'setGroup', 'setBeneficiary', 'setLcTable', 'accountManager', 'roleManager', 'branchManager'];
 
-$("#main-content").load("./pages/lcList.html #lcList");
-// 選單操作
 menuList.forEach(menu => {
   this[`${menu}tab`] = document.querySelector(`#${menu}`);
-
+  
   // 監聽連結
-  this[`${menu}tab`].addEventListener('click', (event) => {
-    event.preventDefault();
-    
-    // 樣式切換
-    this.clearAction();
-    event.target.classList.add('active');
-
-    $("#main-content").load(`./pages/${menu}.html #${menu}`);
-  });
+  if (this[`${menu}tab`]) {
+    this[`${menu}tab`].addEventListener('click', (event) => {
+      event.preventDefault();
+      console.log({event, menu}, $());
+      
+      // 樣式切換
+      this.clearAction();
+      event.target.classList.add('active');
+  
+      document.querySelector('#main-content').src = `./pages/${menu}.html`;
+    });
+  }
 });
 
 // 清除選單全部 [.active] 樣式
@@ -25,15 +26,3 @@ function clearAction() {
     this[`${menu}tab`].classList.remove('active');
   });
 };
-
-
-console.log('ok')
-const modalConfirm = document.querySelector('#modalConfirm');
-if (modalConfirm) {
-  const branchModal = document.querySelector('#branchModal');
-  modalConfirm.addEventListener('click', function() {
-    console.log('ok2')
-
-    $(branchModal).modal('hide');
-  })
-}
