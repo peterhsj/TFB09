@@ -25,3 +25,15 @@ function clearAction() {
     this[`${menu}tab`].classList.remove('active');
   });
 };
+
+
+console.log('ok')
+const modalConfirm = document.querySelector('#modalConfirm');
+if (modalConfirm) {
+  const branchModal = document.querySelector('#branchModal');
+  modalConfirm.addEventListener('click', function() {
+    console.log('ok2')
+
+    $(branchModal).modal('hide');
+  })
+}
