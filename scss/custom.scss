@@ -1,11 +1,13 @@
 @import "../bootstrap/scss/bootstrap";
 
+$tfb-text-color: #3e7db2;
+
 body {
   font-size: .875rem;
 }
 
 header {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 footer {
@@ -18,19 +20,13 @@ footer {
 .login,
 .logout {
   background-color: #3980a6;
-  color: #fff;
+  color: #ffffff;
 
   &:hover {
     background-color: #206a93;
-    color: #fff;
+    color: #ffffff;
   }
 }
-
-/*
-.custom-element {
-  color: $indigo-200;
-}
-*/
 
 /*
  * Sidebar
@@ -66,7 +62,7 @@ footer {
 
 .sidebar .nav-link {
   font-weight: 500;
-  color: #333;
+  color: #333333;
 }
 
 .sidebar .nav-link .feather {
@@ -115,6 +111,51 @@ footer {
 }
 
 .tfb {
+  &__text {
+    color: $tfb-text-color;
+  }
+
+  &__path {
+    color: $tfb-text-color;
+    text-decoration: none;
+    border-bottom: 1px solid $tfb-text-color;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom-width: 0;
+    }
+
+  }
+
+  &__link {
+    &-tab {
+      color: $tfb-text-color;
+      text-decoration: none;
+      border-bottom: 1px solid $tfb-text-color;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+
+    &-text {
+      color: #0099cc;
+      text-decoration: none;
+      border-bottom: 1px solid #0099cc;
+
+      &:hover {
+        color: #ed8000;
+        text-decoration: none;
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  &__list {
+    color: $tfb-text-color;
+  }
+
   &__table {
     border: 1px solid #a6c2d1;
     border-bottom: 2px #a6c2d1 solid;
@@ -156,11 +197,11 @@ footer {
   &__btn2 {
     background: url(../images/btn2.gif) repeat-x top;
     border: 1px solid #4297cc;
-    color: #fff;
+    color: #ffffff;
 
     &:hover {
       background-position: bottom;
-      color: #fff;
+      color: #ffffff;
     }
   }
 
@@ -181,14 +222,14 @@ footer {
     &-confirm {
       text-align: center;
       min-width: 50px;
-      color: #fff;
+      color: #ffffff;
       text-shadow: 0px 1px 0px #132c51;
       border: 1px solid #1b4075;
       background: #2B6398 url(../images/comfirm.gif) repeat-x top;
 
       &:hover {
         background: #367CB3 url(../images/comfirm_hover.gif) repeat-x top;
-        color: #fff;
+        color: #ffffff;
       }
     }
 
@@ -208,7 +249,49 @@ footer {
     }
   }
 
+  &__page {
+    &-link {
+      color: #034c74;
+    }
+
+    &-item {
+      .page-link {
+        color: #034c74;
+      }
+
+      &.active {
+        .page-link {
+          color: #fff;
+          background-color: #08a3d6;
+          border-color: #08a3d6;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    &-title {
+      &:not(.collapsed) {
+        color: #034c74;
+      }
+    }
+
+    &-btn {
+      &.active {
+        color: #ffffff;
+        background-color: #08a3d6;
+        border: 1px solid #08a3d6;
+      }
+    }
+  }
+
   &__modal {
     border: 5px solid #81c1db;
+  }
+}
+
+.page {
+  &-width {
+    width: 150px;
   }
 }
