@@ -20,136 +20,292 @@
         <li class="breadcrumb-item active" aria-current="page">帳號維護</li>
       </ol>
     </nav>
-    <h1 class="fs-4 fw-bolder">帳號維護</h1>
+    <h1 class="fs-4 fw-bolder">帳號管理清冊</h1>
+    <div class="py-2 text-end">
+      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
+        <span class="mdi mdi-plus"></span>
+        新增
+      </button>
+    </div>
     <div class="table-responsive">
-      <table class="table table-striped table-sm">
+      <table class="table table-striped table-sm tfb__table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Header</th>
-            <th scope="col">Header</th>
-            <th scope="col">Header</th>
-            <th scope="col">Header</th>
+            <th scope="col" class="tfb__tbhd">使用者帳號</th>
+            <th scope="col" class="tfb__tbhd">使用者名稱</th>
+            <th scope="col" class="tfb__tbhd">隸屬分行代碼/名稱</th>
+            <th scope="col" class="tfb__tbhd">隸屬角色</th>
+            <th scope="col" class="tfb__tbhd">使用者狀態</th>
+            <th scope="col" class="tfb__tbhd">功能</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1,001</td>
-            <td>random</td>
-            <td>data</td>
-            <td>placeholder</td>
-            <td>text</td>
+            <td class="text-center">FUBON001</td>
+            <td class="text-center">王富邦</td>
+            <td class="text-center">0001 / 台北分行</td>
+            <td class="text-center">
+              <div>系統管理員</div>
+              <ul class="tfb__level">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>  
+              </ul>
+            </td>
+            <td class="text-center">
+              <div class="form-check form-switch d-inline-flex">
+                <input class="form-check-input tfb__switch" type="checkbox" role="switch" checked>
+              </div>
+            </td>
+            <td class="text-center w-25">
+              <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
+                <span class="mdi mdi-cog"></span>
+                設定
+              </button>
+            </td>
           </tr>
           <tr>
-            <td>1,002</td>
-            <td>placeholder</td>
-            <td>irrelevant</td>
-            <td>visual</td>
-            <td>layout</td>
+            <td class="text-center">FUBON002</td>
+            <td class="text-center">李邦邦</td>
+            <td class="text-center">1357 / 新竹分行</td>
+            <td class="text-center">
+              <div>分行管理員</div>
+              <ul class="tfb__level">
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>  
+              </ul>
+            </td>
+            <td class="text-center">
+              <div class="form-check form-switch d-inline-flex">
+                <input class="form-check-input tfb__switch" type="checkbox" role="switch" checked>
+              </div>
+            </td>
+            <td class="text-center w-25">
+              <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
+                <span class="mdi mdi-cog"></span>
+                設定
+              </button>
+            </td>
           </tr>
           <tr>
-            <td>1,003</td>
-            <td>data</td>
-            <td>rich</td>
-            <td>dashboard</td>
-            <td>tabular</td>
+            <td class="text-center">QTEST01</td>
+            <td class="text-center">王曉明</td>
+            <td class="text-center">3358 / 高雄分行</td>
+            <td class="text-center">
+              <div>分行主管</div>
+              <ul class="tfb__level">
+                <li>1</li>
+                <li>2</li>
+                <li class="active">3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>  
+              </ul>
+            </td>
+            <td class="text-center">
+              <div class="form-check form-switch d-inline-flex">
+                <input class="form-check-input tfb__switch" type="checkbox" role="switch">
+              </div>
+            </td>
+            <td class="text-center w-25">
+              <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
+                <span class="mdi mdi-cog"></span>
+                設定
+              </button>
+            </td>
           </tr>
           <tr>
-            <td>1,003</td>
-            <td>information</td>
-            <td>placeholder</td>
-            <td>illustrative</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>1,004</td>
-            <td>text</td>
-            <td>random</td>
-            <td>layout</td>
-            <td>dashboard</td>
-          </tr>
-          <tr>
-            <td>1,005</td>
-            <td>dashboard</td>
-            <td>irrelevant</td>
-            <td>text</td>
-            <td>placeholder</td>
-          </tr>
-          <tr>
-            <td>1,006</td>
-            <td>dashboard</td>
-            <td>illustrative</td>
-            <td>rich</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>1,007</td>
-            <td>placeholder</td>
-            <td>tabular</td>
-            <td>information</td>
-            <td>irrelevant</td>
-          </tr>
-          <tr>
-            <td>1,008</td>
-            <td>random</td>
-            <td>data</td>
-            <td>placeholder</td>
-            <td>text</td>
-          </tr>
-          <tr>
-            <td>1,009</td>
-            <td>placeholder</td>
-            <td>irrelevant</td>
-            <td>visual</td>
-            <td>layout</td>
-          </tr>
-          <tr>
-            <td>1,010</td>
-            <td>data</td>
-            <td>rich</td>
-            <td>dashboard</td>
-            <td>tabular</td>
-          </tr>
-          <tr>
-            <td>1,011</td>
-            <td>information</td>
-            <td>placeholder</td>
-            <td>illustrative</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>1,012</td>
-            <td>text</td>
-            <td>placeholder</td>
-            <td>layout</td>
-            <td>dashboard</td>
-          </tr>
-          <tr>
-            <td>1,013</td>
-            <td>dashboard</td>
-            <td>irrelevant</td>
-            <td>text</td>
-            <td>visual</td>
-          </tr>
-          <tr>
-            <td>1,014</td>
-            <td>dashboard</td>
-            <td>illustrative</td>
-            <td>rich</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>1,015</td>
-            <td>random</td>
-            <td>tabular</td>
-            <td>information</td>
-            <td>text</td>
-          </tr>
-          
+            <td class="text-center">DDTEST</td>
+            <td class="text-center">張小名</td>
+            <td class="text-center">0001 / 台北分行</td>
+            <td class="text-center">
+              <div>分行經辦</div>
+              <ul class="tfb__level">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li class="active">4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>  
+              </ul>
+            </td>
+            <td class="text-center">
+              <div class="form-check form-switch d-inline-flex">
+                <input class="form-check-input tfb__switch" type="checkbox" role="switch">
+              </div>
+            </td>
+            <td class="text-center w-25">
+              <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
+                <span class="mdi mdi-cog"></span>
+                設定
+              </button>
+            </td>
+          </tr>          
         </tbody>
       </table>
     </div>
   </div>
+
+  <!-- accountManagerModal -->
+  <div class="modal fade" id="accountManagerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="accountManagerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content tfb__modal">
+        <form>
+          <div class="modal-header py-2 border-bottom-0">
+            <h5 class="modal-title fs-5 fw-bolder" id="accountManagerModalLabel">
+              新增/編輯使用者帳號
+            </h5>
+            <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body bg-light">
+            <div class="table-responsive">
+              <table class="table table-sm tfb__table">
+                <tbody>
+                  <tr>
+                    <th class="tfb__tbhd2 w-25">使用者帳號</th>
+                    <td class="bg-white">
+                      <input id="account" class="form-control form-control-sm" type="text" readonly value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2">使用者名稱</th>
+                    <td class="bg-white">
+                      <input id="userName" class="form-control form-control-sm" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2">隸屬分行代碼/名稱</th>
+                    <td class="bg-white">
+                      <input id="branchNo" class="form-control form-control-sm" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2">隸屬角色</th>
+                    <td class="bg-white">
+                      <input id="role" class="form-control form-control-sm" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2">連絡電話</th>
+                    <td class="bg-white">
+                      <input id="phone" class="form-control form-control-sm" type="text" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2">Email</th>
+                    <td class="bg-white">
+                      <input id="email" class="form-control form-control-sm" type="text" value="">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center border-top-0">
+            <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">取消</button>
+            <button type="reset" class="px-3 btn border-1 tfb__btn-cancel">重設</button>
+            <button type="button" id="modalConfirm" class="px-3 btn border-1 tfb__btn-confirm">確認</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Js -->
+  <script>
+    // 新增編輯的狀態顯示
+    const addItem = document.querySelector('#addItem');
+    const editItem = document.querySelectorAll('.editItem');
+    const switchItem = document.querySelectorAll('.tfb__switch');
+    const idList = ['account', 'userName', 'branchNo', 'role', 'phone', 'email'];
+    const domList = idList.map(id => {
+      this[id] = document.querySelector(`#${id}`);
+      return this[id];
+    });
+    
+    // 新增
+    addItem.addEventListener('click', () => {
+      domList.forEach(dom => {
+        dom.removeAttribute('readonly');
+        dom.removeAttribute('disabled');
+        dom.value = '';
+      })
+    })
+
+    // 編輯
+    editItem.forEach(item => {
+      const data = ['FUBON001', '王富邦', '00001/台北分行', '經辦', '0212345678', 'fubon001@fubon.com.tw'];
+      item.addEventListener('click', () => {
+        domList.forEach((dom, index) => {
+          dom.value = data[index];
+        })
+        domList[0].setAttribute('readonly', '');
+        domList[0].setAttribute('disabled', '');
+      });
+    });
+
+    // 狀態切換
+    switchItem.forEach(item => {
+      item.addEventListener('click', (e) => {
+        const  el = e.target;
+        const  elSwitch = el.getAttribute('checked');
+        const info = document.querySelector('#infotext');
+        if (elSwitch === '') {
+          el.removeAttribute('checked');
+          info.textContent = '使用者已關閉';
+          $(infoModal).modal('show')
+        } else {
+          el.setAttribute('checked', '');
+          info.textContent = '使用者已開啟';
+          $(infoModal).modal('show')
+        }
+
+      });
+    });    
+  </script>
+
+  <!-- infoModal -->
+  <div class="modal fade" id="infoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content tfb__modal">
+        <div class="modal-body bg-light">            
+          <p id="infotext" class="mb-2 py-3 fs-5 fw-bolder text-center">
+            使用者已開啟
+          </p>
+        </div>
+        <div class="modal-footer justify-content-center border-top-0">
+          <button type="button" id="modalClose" class="px-3 btn border-1 tfb__btn-confirm">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JS -->
+  <script>
+    // modalClose button Handler
+    const infoModal = document.querySelector('#infoModal');
+    const modalClose = document.querySelector('#modalClose');
+    modalClose.addEventListener('click', () => {
+      $(infoModal).modal('hide');
+    })
+
+    // modalConfirm button Handler
+    const accountManagerModal = document.querySelector('#accountManagerModal');
+    const modalConfirm = document.querySelector('#modalConfirm');
+    modalConfirm.addEventListener('click', () => {
+      $(accountManagerModal).modal('hide');
+    })  
+  </script>
+
   <!-- 帳號維護 -->
   <script src="../js/bootstrap.bundle.min.js"></script>  
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>

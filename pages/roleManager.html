@@ -111,7 +111,7 @@
         <form>
           <div class="modal-header py-2 border-bottom-0">
             <h5 class="modal-title fs-5 fw-bolder" id="roleManagerModalLabel">
-              編輯角色
+              新增/編輯角色
             </h5>
             <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -240,59 +240,52 @@
           </div>
           <div class="modal-footer justify-content-center border-top-0">
             <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">取消</button>
-            <button type="reset" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">重設</button>
+            <button type="reset" class="px-3 btn border-1 tfb__btn-cancel">重設</button>
             <button type="button" id="modalConfirm" class="px-3 btn border-1 tfb__btn-confirm">確認</button>
           </div>
         </form>
       </div>
     </div>
-
-    <!-- Js -->
-    <script>
-      // 新增編輯的狀態顯示
-      const addItem = document.querySelector('#addItem');
-      const editItem = document.querySelectorAll('.editItem');
-      const roleNo = document.querySelector('#roleNo');
-      const roleName = document.querySelector('#roleName');
-      const roleType = document.querySelector('#roleType');
-      
-      // 新增
-      addItem.addEventListener('click', () => {
-        roleNo.removeAttribute('readonly');
-        roleNo.removeAttribute('disabled');
-        roleNo.value = '';
-        roleName.removeAttribute('readonly');
-        roleName.removeAttribute('disabled');
-        roleName.value = '';
-        roleType.removeAttribute('readonly');
-        roleType.removeAttribute('disabled');
-        roleType.value = '';
-      })
-
-      // 編輯
-      editItem.forEach(item => {
-        item.addEventListener('click', () => {
-          roleNo.setAttribute('readonly', '');
-          roleNo.setAttribute('disabled', '');
-          roleNo.value = '2';
-          roleName.setAttribute('readonly', '');
-          roleName.setAttribute('disabled', '');
-          roleName.value = '分行管理員';
-          roleType.setAttribute('readonly', '');
-          roleType.setAttribute('disabled', '');
-          roleType.value = '一般';
-        })
-      });
-
-      // modalConfirm button Handler
-      const roleManagerModal = document.querySelector('#roleManagerModal');
-      const modalConfirm = document.querySelector('#modalConfirm');
-      modalConfirm.addEventListener('click', () => {
-        $(roleManagerModal).modal('hide');
-      })
-    
-    </script>
   </div>
+  <!-- Js -->
+  <script>
+    // 新增編輯的狀態顯示
+    const addItem = document.querySelector('#addItem');
+    const editItem = document.querySelectorAll('.editItem');
+    const idList = ['roleNo', 'roleName', 'roleType'];
+    const domList = idList.map(id => {
+      this[id] = document.querySelector(`#${id}`);
+      return this[id];
+    });
+    
+    // 新增
+    addItem.addEventListener('click', () => {
+      domList.forEach(dom => {
+        dom.removeAttribute('readonly');
+        dom.removeAttribute('disabled');
+        dom.value = '';
+      })
+    })
+
+    // 編輯
+    editItem.forEach(item => {
+      const data = ['2', '分行管理員', '一般'];
+      item.addEventListener('click', () => {
+        domList.forEach((dom, index) => {
+          dom.setAttribute('readonly', '');
+          dom.setAttribute('disabled', '');
+          dom.value = data[index];
+        })
+      })
+    });
+
+    // modalConfirm button Handler
+    const roleManagerModal = document.querySelector('#roleManagerModal');
+    const modalConfirm = document.querySelector('#modalConfirm');
+    modalConfirm.addEventListener('click', () => {
+      $(roleManagerModal).modal('hide');
+    })  
+  </script>
 
   <!-- delRoleManagerModal -->
   <div class="modal fade" id="delRoleManagerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="delRoleManagerModalLabel" aria-hidden="true">
@@ -309,16 +302,16 @@
         </div>
       </div>
     </div>
-    <script>
-      // modalConfirm button Handler
-      const delRoleManagerModal = document.querySelector('#delRoleManagerModal');
-      const modalDelConfirm = document.querySelector('#modalDelConfirm');
-      modalDelConfirm.addEventListener('click', () => {
-        $(delRoleManagerModal).modal('hide');
-      })
-    
-    </script>
   </div>
+  <!-- Js -->
+  <script>
+    // modalConfirm button Handler
+    const delRoleManagerModal = document.querySelector('#delRoleManagerModal');
+    const modalDelConfirm = document.querySelector('#modalDelConfirm');
+    modalDelConfirm.addEventListener('click', () => {
+      $(delRoleManagerModal).modal('hide');
+    })  
+  </script>
     
   <!-- 角色維護 -->
   <script src="../js/bootstrap.bundle.min.js"></script>  
