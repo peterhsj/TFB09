@@ -10249,6 +10249,11 @@ footer {
   font-size: 1.15rem !important;
 }
 
+.tfb__title {
+  padding-left: 10px;
+  color: #3e7db2;
+  border-left: 5px solid #3e7db2;
+}
 .tfb__text {
   color: #3e7db2;
 }
@@ -10321,6 +10326,15 @@ footer {
   color: #ffffff;
 }
 .tfb__btn2:hover {
+  background-position: bottom;
+  color: #ffffff;
+}
+.tfb__btn-red {
+  background: url(../images/btn-red.gif) repeat-x top;
+  border: 1px solid #4297cc;
+  color: #ffffff;
+}
+.tfb__btn-red:hover {
   background-position: bottom;
   color: #ffffff;
 }
