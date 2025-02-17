@@ -10266,6 +10266,26 @@ footer {
   text-decoration: none;
   border-bottom-width: 0;
 }
+.tfb__tab {
+  margin: 0 2px;
+  color: #95cdf8;
+  background: #054669 url(../images/menu_Lv3.gif) repeat-x top !important;
+}
+.tfb__tab:hover {
+  background: #054669;
+  border-color: #00304a #00304a #00304a !important;
+  color: #d7eeff;
+}
+.tfb__tab.active {
+  border: 1px solid #cdd0d5;
+  border-bottom: 0px;
+  background: #ffffff !important;
+  color: #565656;
+}
+.tfb__tab.active:hover {
+  border: 1px solid #cdd0d5 !important;
+  border-bottom: 0px;
+}
 .tfb__link-tab {
   color: #3e7db2;
   text-decoration: none;

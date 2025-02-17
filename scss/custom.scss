@@ -130,7 +130,30 @@ footer {
       text-decoration: none;
       border-bottom-width: 0;
     }
+  }
 
+  &__tab {
+    margin: 0 2px;
+    color: #95cdf8;
+    background: #054669 url(../images/menu_Lv3.gif) repeat-x top !important;
+
+    &:hover {
+      background: #054669;
+      border-color: #00304a #00304a #00304a !important;
+      color: #d7eeff;
+    }
+
+    &.active {
+      border: 1px solid #cdd0d5;
+      border-bottom: 0px;
+      background: #ffffff !important;
+      color: #565656;
+
+      &:hover {
+        border: 1px solid #cdd0d5 !important;
+        border-bottom: 0px;
+      }
+    }
   }
 
   &__link {
