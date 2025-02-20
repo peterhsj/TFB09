@@ -68,14 +68,16 @@
         </div>
         <div class="row">
           <div class="col text-end py-1">
-            <button type="button" id="modalConfirm" class="px-3 btn btn-sm tfb__btn2">查詢</button>
+            <div class="col text-end py-1">
+              <button type="reset" id="reset" class="me-2 px-3 btn btn-sm tfb__btn-reset">重設</button>
+            <button type="button" id="search" class="px-3 btn btn-sm tfb__btn-default">查詢</button>
           </div>
         </div>
       </div>
     </div>
     <h1 class="pt-4 pb-2 fs-4 fw-bolder">台塑企業信用狀統計查詢清冊</h1>
     <div class="py-2 text-end">
-      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn2" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
+      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
         <span class="mdi mdi-plus"></span>
         匯出 Excel 檔
       </button>

@@ -1,5 +1,5 @@
 // 選單 ID 
-const menuList = ['todoList', 'info', 'lcList', 'negotiationList', 'acceptNegotiation', 'checkNegotiation', 'setGroup', 'setBeneficiary', 'setLcTable', 'accountManager', 'roleManager', 'branchManager'];
+const menuList = ['todoList', 'info', 'lcList', 'negotiationList', 'acceptNegotiation', 'checkNegotiation', 'setGroup', 'setBeneficiary', 'setLcTable', 'accountManager', 'roleManager', 'branchManager', 'track', 'send'];
 
 const homePage = document.querySelector('#homePage');
 homePage.addEventListener('click', (e) => {

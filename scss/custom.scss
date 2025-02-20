@@ -252,29 +252,40 @@ footer {
     font-weight: bold;
   }
 
-  &__btn2 {
-    background: url(../images/btn2.gif) repeat-x top;
-    border: 1px solid #4297cc;
-    color: #ffffff;
-
-    &:hover {
-      background-position: bottom;
-      color: #ffffff;
-    }
-  }
-
-  &__btn-red {
-    background: url(../images/btn-red.gif) repeat-x top;
-    border: 1px solid #4297cc;
-    color: #ffffff;
-
-    &:hover {
-      background-position: bottom;
-      color: #ffffff;
-    }
-  }
-
   &__btn {
+    &-default {
+      background: url(../images/btn2.gif) repeat-x top;
+      border: 1px solid #4297cc;
+      color: #ffffff;
+
+      &:hover {
+        background-position: bottom;
+        color: #ffffff;
+      }
+    }
+
+    &-red {
+      background: url(../images/btn-red.gif) repeat-x top;
+      border: 1px solid #cf5c39;
+      color: #ffffff;
+
+      &:hover {
+        background-position: bottom;
+        color: #ffffff;
+      }
+    }
+
+    &-reset {
+      background: url(../images/cancel.gif) repeat-x top;
+      border: 1px solid #999999;
+      color: #333333;
+
+      &:hover {
+        background-position: bottom;
+        color: #333333;
+      }
+    }
+
     &-cancel {
       color: #5e5e5e;
       min-width: 50px;

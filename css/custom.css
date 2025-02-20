@@ -10366,23 +10366,32 @@ footer {
   text-align: right;
   font-weight: bold;
 }
-.tfb__btn2 {
+.tfb__btn-default {
   background: url(../images/btn2.gif) repeat-x top;
   border: 1px solid #4297cc;
   color: #ffffff;
 }
-.tfb__btn2:hover {
+.tfb__btn-default:hover {
   background-position: bottom;
   color: #ffffff;
 }
 .tfb__btn-red {
   background: url(../images/btn-red.gif) repeat-x top;
-  border: 1px solid #4297cc;
+  border: 1px solid #cf5c39;
   color: #ffffff;
 }
 .tfb__btn-red:hover {
   background-position: bottom;
   color: #ffffff;
+}
+.tfb__btn-reset {
+  background: url(../images/cancel.gif) repeat-x top;
+  border: 1px solid #999999;
+  color: #333333;
+}
+.tfb__btn-reset:hover {
+  background-position: bottom;
+  color: #333333;
 }
 .tfb__btn-cancel {
   color: #5e5e5e;
