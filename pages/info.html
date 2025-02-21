@@ -44,7 +44,7 @@
             <td class="text-center">
               <input class="form-check-input" type="checkbox" id="check1" value="1">
             </td>
-            <td><a href="#" id="test" class="tfb__link-text">開狀完成通知</a></td>
+            <td>開狀完成通知</td>
             <td>114年2月7日客戶多樂股份有限公司完成開立國內信用狀1筆(LC_TEST_2025020701)</td>
             <td class="text-center">2025/02/07 16:50:21</td>
           </tr>
@@ -121,16 +121,15 @@
         </div>
       </div>
     </div>
-    <script>
-      // modalConfirm button Handler
-      const infoDelModal = document.querySelector('#infoDelModal');
-      const modalDelConfirm = document.querySelector('#modalDelConfirm');
-      modalDelConfirm.addEventListener('click', () => {
-        $(infoDelModal).modal('hide');
-      })
-    
-    </script>
   </div>
+  <script>
+    // modalConfirm button Handler
+    const infoDelModal = document.querySelector('#infoDelModal');
+    const modalDelConfirm = document.querySelector('#modalDelConfirm');
+    modalDelConfirm.addEventListener('click', () => {
+      $(infoDelModal).modal('hide');
+    });  
+  </script>
 
   <!-- 查詢訊息匣資料 -->
   <script src="../js/bootstrap.bundle.min.js"></script>  

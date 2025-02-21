@@ -228,6 +228,22 @@ footer {
     > :not(:last-child)> :last-child>* {
       border-bottom-color: inherit;
     }
+
+    &-print {
+      border: 1px solid #333333;
+      border-bottom: 1px #333333 solid;
+
+      th,
+      td {
+        border: 1px solid #333333;
+        padding: 6px 5px;
+        vertical-align: middle;
+      }
+
+      > :not(:last-child)> :last-child>* {
+        border-bottom-color: inherit;
+      }
+    }
   }
 
   &__tbtitle {
@@ -249,6 +265,13 @@ footer {
     background-color: #eef2f4 !important;
     color: #25424e;
     text-align: right;
+    font-weight: bold;
+  }
+
+  &__tbhd3 {
+    background-color: #d9ebf5 !important;
+    color: #1b3f53;
+    text-align: center;
     font-weight: bold;
   }
 
