@@ -74,104 +74,114 @@
         </form>
       </div>
     </div>
-    <h1 class="pt-4 pb-2 fs-4 fw-bolder">存取軌跡紀錄查詢清冊</h1>
-    <div class="py-2 text-end">
-      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
-        <span class="mdi mdi-plus"></span>
-        匯出 Excel 檔
-      </button>
-    </div>
-    <div class="table-responsive">
-      <table class="mb-0 table table-striped table-sm tfb__table">
-        <thead>
-          <tr>
-            <th scope="col" class="tfb__tbhd">使用者帳號</th>
-            <th scope="col" class="tfb__tbhd">使用者姓名</th>
-            <th scope="col" class="tfb__tbhd">存取日期</th>
-            <th scope="col" class="tfb__tbhd">執行功能</th>
-            <th scope="col" class="tfb__tbhd">執行模式</th>
-            <th scope="col" class="tfb__tbhd">執行結果</th>
-            <th scope="col" class="tfb__tbhd w-25">作業訊息</th>
-            <th scope="col" class="tfb__tbhd">修改前</th>
-            <th scope="col" class="tfb__tbhd">修改後</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-center">petersun</td>
-            <td class="text-center">peter</td>
-            <td class="text-center">2025/02/07 16:50:21</td>
-            <td class="text-center">帳號管理</td>
-            <td class="text-center">修改使用者帳號</td>
-            <td class="text-center">成功</td>
-            <td>使用者帳號修改成功</td>
-            <td>petersun</td>
-            <td>petersun05</td>
-          </tr>
-          <tr>
-            <td class="text-center">petersun</td>
-            <td class="text-center">peter</td>
-            <td class="text-center">2025/02/07 16:50:21</td>
-            <td class="text-center">登入</td>
-            <td class="text-center">Login</td>
-            <td class="text-center">成功</td>
-            <td>正常登入</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="text-center">petersun06</td>
-            <td class="text-center">petersun06</td>
-            <td class="text-center">2025/02/07 16:50:21</td>
-            <td class="text-center">帳號管理</td>
-            <td class="text-center">新增使用者帳號</td>
-            <td class="text-center">成功</td>
-            <td>使用者帳號新增成功</td>
-            <td></td>
-            <td>petersun06</td>
-          </tr>          
-        </tbody>
-      </table>
-      <nav class="mt-3 d-flex align-items-center justify-content-between">
-        <div class="d-flex text-nowrap">
-          <ul class="pagination pagination-sm">
-            <li class="page-item tfb__page-item disabled">
-              <a class="page-link">第一頁</a>
-            </li>
-            <li class="page-item tfb__page-item disabled">
-              <a class="page-link">
-                <span class="mdi mdi-chevron-left"></span>
-              </a>
-            </li>
-            <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item tfb__page-item">
-              <a class="page-link" href="#">
-                <span class="mdi mdi-chevron-right"></span>
-              </a>
-            </li>
-            <li class="page-item tfb__page-item">
-              <a class="page-link" href="#">最後一頁</a>
-            </li>
-          </ul>
-          <!-- <input class="form-control form-control-sm" type="text" value=""> -->
-          <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
-            <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
-            <input type="text" class="form-control" value="">
-            <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
-            <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+    <div id="trackList" class="tfb__hide">
+      <h1 class="pt-4 pb-2 fs-4 fw-bolder">存取軌跡紀錄查詢清冊</h1>
+      <div class="py-2 text-end">
+        <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
+          <span class="mdi mdi-plus"></span>
+          匯出 Excel 檔
+        </button>
+      </div>
+      <div class="table-responsive">
+        <table class="mb-0 table table-striped table-sm tfb__table">
+          <thead>
+            <tr>
+              <th scope="col" class="tfb__tbhd">使用者帳號</th>
+              <th scope="col" class="tfb__tbhd">使用者姓名</th>
+              <th scope="col" class="tfb__tbhd">存取日期</th>
+              <th scope="col" class="tfb__tbhd">執行功能</th>
+              <th scope="col" class="tfb__tbhd">執行模式</th>
+              <th scope="col" class="tfb__tbhd">執行結果</th>
+              <th scope="col" class="tfb__tbhd w-25">作業訊息</th>
+              <th scope="col" class="tfb__tbhd">修改前</th>
+              <th scope="col" class="tfb__tbhd">修改後</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">petersun</td>
+              <td class="text-center">peter</td>
+              <td class="text-center">2025/02/07 16:50:21</td>
+              <td class="text-center">帳號管理</td>
+              <td class="text-center">修改使用者帳號</td>
+              <td class="text-center">成功</td>
+              <td>使用者帳號修改成功</td>
+              <td>petersun</td>
+              <td>petersun05</td>
+            </tr>
+            <tr>
+              <td class="text-center">petersun</td>
+              <td class="text-center">peter</td>
+              <td class="text-center">2025/02/07 16:50:21</td>
+              <td class="text-center">登入</td>
+              <td class="text-center">Login</td>
+              <td class="text-center">成功</td>
+              <td>正常登入</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-center">petersun06</td>
+              <td class="text-center">petersun06</td>
+              <td class="text-center">2025/02/07 16:50:21</td>
+              <td class="text-center">帳號管理</td>
+              <td class="text-center">新增使用者帳號</td>
+              <td class="text-center">成功</td>
+              <td>使用者帳號新增成功</td>
+              <td></td>
+              <td>petersun06</td>
+            </tr>          
+          </tbody>
+        </table>
+        <nav class="mt-3 d-flex align-items-center justify-content-between">
+          <div class="d-flex text-nowrap">
+            <ul class="pagination pagination-sm">
+              <li class="page-item tfb__page-item disabled">
+                <a class="page-link">第一頁</a>
+              </li>
+              <li class="page-item tfb__page-item disabled">
+                <a class="page-link">
+                  <span class="mdi mdi-chevron-left"></span>
+                </a>
+              </li>
+              <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item tfb__page-item">
+                <a class="page-link" href="#">
+                  <span class="mdi mdi-chevron-right"></span>
+                </a>
+              </li>
+              <li class="page-item tfb__page-item">
+                <a class="page-link" href="#">最後一頁</a>
+              </li>
+            </ul>
+            <!-- <input class="form-control form-control-sm" type="text" value=""> -->
+            <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
+              <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
+              <input type="text" class="form-control" value="">
+              <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
+              <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+            </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
-        </div>
-      </nav>
-    </div>    
+          <div class="mb-3">
+            <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
+          </div>
+        </nav>
+      </div>
+    </div>
   </div>
   <!-- 設定台塑網平台之企業信用狀統計表 -->
+  <!-- JS -->
+  <script>
+    const search = document.querySelector('#search');
+    const trackList = document.querySelector('#trackList');
+    search.addEventListener('click', () => {
+      trackList.classList.remove('tfb__hide')
+    });
+  </script>  
   <script src="../js/bootstrap.bundle.min.js"></script>  
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="../js/page.js"></script>

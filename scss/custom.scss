@@ -375,6 +375,10 @@ footer {
   &__modal {
     border: 5px solid #81c1db;
   }
+
+  &__hide {
+    display: none;
+  }
 }
 
 .page {

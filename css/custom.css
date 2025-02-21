@@ -10455,6 +10455,9 @@ footer {
 .tfb__modal {
   border: 5px solid #81c1db;
 }
+.tfb__hide {
+  display: none;
+}
 
 .page-width {
   width: 150px;
