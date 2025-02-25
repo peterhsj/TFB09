@@ -29,6 +29,49 @@ footer {
 }
 
 /*
+ * 登入頁面
+ */
+.tfb {
+  &__signin {
+    &-wrapper {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #f5f5f5;
+    }
+
+    &-form {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+
+      .checkbox {
+        font-weight: 400;
+      }
+
+      .form-floating:focus-within {
+        z-index: 2;
+      }
+
+      input[type="text"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+
+/*
  * Sidebar
  */
 
@@ -44,7 +87,7 @@ footer {
   z-index: 100;
   /* Behind the navbar */
   padding: 66px 0 32px;
-  width: 300px;
+  width: 275px;
   /* Height of navbar */
   background-color: #e6e6e6;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -99,9 +142,9 @@ footer {
 
 .content {
   &__wrapper {
-    width: calc(100% - 300px);
+    width: calc(100% - 275px);
     height: 100vh;
-    margin-left: 300px;
+    margin-left: 275px;
     padding-top: 66px;
     padding-bottom: 32px;
   }

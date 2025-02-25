@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <title>台北富邦銀行 - 台塑信用狀系統</title>
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" media="all" />
+  <link rel="stylesheet" href="./css/custom.css">
+</head>
+
+<body>
+  <div class="px-0 tfb__signin-wrapper">
+    <main class="tfb__signin-form">
+      <form>
+        <div class="text-center pb-2">
+          <img class="mb-1" src="./images/img-hd-logo.png" alt="">
+          <div class="align-text-top fs-4 fw-bold custom-element" style="color: #2a91bc;">
+            台塑信用狀系統
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control form-control-sm" id="floatingInput">
+          <label for="floatingInput">帳號</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control form-control-sm" id="floatingPassword" autocomplete="false">
+          <label for="floatingPassword">密碼</label>
+        </div>
+        
+        <button id="signIn" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      </form>
+    </main>
+  </div>
+  <!-- JS Plugin -->
+  <script>
+    const signIn = document.querySelector('#signIn');
+    signIn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.cookie = 'username=tfb';
+      window.location.href = './index.html'
+    });
+  </script>
+  <script src="./js/bootstrap.bundle.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</body>
+</html>
