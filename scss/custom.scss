@@ -395,6 +395,10 @@ footer {
     }
   }
 
+  &__calendar {
+    min-width: 100px !important;
+  }
+
   &__modal {
     border: 5px solid #81c1db;
   }
@@ -408,4 +412,8 @@ footer {
   &-width {
     width: 150px;
   }
+}
+
+.w-15 {
+  width: 15% !important;
 }

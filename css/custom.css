@@ -10471,6 +10471,9 @@ footer {
   background-color: #08a3d6;
   border: 1px solid #08a3d6;
 }
+.tfb__calendar {
+  min-width: 100px !important;
+}
 .tfb__modal {
   border: 5px solid #81c1db;
 }
@@ -10480,4 +10483,8 @@ footer {
 
 .page-width {
   width: 150px;
+}
+
+.w-15 {
+  width: 15% !important;
 }/*# sourceMappingURL=custom.css.map */
