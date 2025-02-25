@@ -132,7 +132,6 @@
                     <a class="page-link" href="#">最後一頁</a>
                   </li>
                 </ul>
-                <!-- <input class="form-control form-control-sm" type="text" value=""> -->
                 <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
                   <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
                   <input type="text" class="form-control" value="">
@@ -141,7 +140,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
+                <span class="tfb__text">總筆數：</span>2 / <span class="tfb__text">總頁數：</span>1
               </div>
             </nav>
           </div>
@@ -234,7 +233,6 @@
                     <a class="page-link" href="#">最後一頁</a>
                   </li>
                 </ul>
-                <!-- <input class="form-control form-control-sm" type="text" value=""> -->
                 <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
                   <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
                   <input type="text" class="form-control" value="">
@@ -243,7 +241,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
+                <span class="tfb__text">總筆數：</span>2 / <span class="tfb__text">總頁數：</span>1
               </div>
             </nav>
           </div>
@@ -336,7 +334,6 @@
                     <a class="page-link" href="#">最後一頁</a>
                   </li>
                 </ul>
-                <!-- <input class="form-control form-control-sm" type="text" value=""> -->
                 <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
                   <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
                   <input type="text" class="form-control" value="">
@@ -345,7 +342,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
+                <span class="tfb__text">總筆數：</span>2 / <span class="tfb__text">總頁數：</span>1
               </div>
             </nav>
           </div>
@@ -438,7 +435,6 @@
                     <a class="page-link" href="#">最後一頁</a>
                   </li>
                 </ul>
-                <!-- <input class="form-control form-control-sm" type="text" value=""> -->
                 <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
                   <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
                   <input type="text" class="form-control" value="">
@@ -447,7 +443,7 @@
                 </div>
               </div>
               <div class="mb-3">
-                <span class="tfb__text">總筆數：</span>100 / <span class="tfb__text">總頁數：</span>20
+                <span class="tfb__text">總筆數：</span>2 / <span class="tfb__text">總頁數：</span>1
               </div>
             </nav>
           </div>
@@ -536,11 +532,8 @@
     addItemList.forEach((addItem, idx) => {
       addItem.addEventListener('click', () => {
         const setBeneficiaryForm = document.querySelector('#setBeneficiaryForm');
-        //const groupType = document.querySelector('#groupType');
         setBeneficiaryForm.reset();
         domList.forEach(dom => {
-          // dom.removeAttribute('readonly');
-          // dom.removeAttribute('disabled');
           dom.value = '';
         })
         groupType.value = groupList[idx];
@@ -552,8 +545,6 @@
       const data = ['11921209', '台灣塑膠工業股份有限公司台北辦事處', '台北市敦化北路201號', '李志村', 'tpc'];
       item.addEventListener('click', () => {
         domList.forEach((dom, index) => {
-          // dom.setAttribute('readonly', '');
-          // dom.setAttribute('disabled', '');
           dom.value = data[index];
         })
       })

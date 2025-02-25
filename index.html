@@ -112,14 +112,14 @@
             </div>
           </div>
         </div>
-        <div class="list-group rounded-0" id="list-tab" role="tablist" style="margin-left: 1px;margin-right: 1px;">
-          <a class="ps-4 border-0 list-group-item list-group-item-action tfb__menu-btn" id="accountManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-home">
-            帳號維護
+        <div class="list-group rounded-0" id="list-tab" role="tablist" style="margin: 0 1px;">
+          <a class="border-0 list-group-item list-group-item-action tfb__menu-btn fs-1-5 fw-bolder" id="accountManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-home" style="padding-left: 1.25rem;line-height: 1.2;">
+             帳號維護
           </a>
-          <a class="ps-4 border-0 list-group-item list-group-item-action tfb__menu-btn" id="roleManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-profile">
+          <a class="border-0 list-group-item list-group-item-action tfb__menu-btn fs-1-5 fw-bolder" id="roleManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-profile" style="padding-left: 1.25rem;line-height: 1.2;">
             角色維護
           </a>
-          <a class="ps-4 border-0 list-group-item list-group-item-action tfb__menu-btn" id="branchManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-profile">
+          <a class="border-0 list-group-item list-group-item-action tfb__menu-btn fs-1-5 fw-bolder" id="branchManager" data-bs-toggle="list" href="javascript:void(0)" role="tab" aria-controls="list-profile" style="padding-left: 1.25rem;line-height: 1.2;">
             分行資料維護
           </a>
         </div>
@@ -148,7 +148,6 @@
     const userName = getCookie('username');
 
     window.onload = (event) => {
-      console.log("page is fully loaded");
       if (!userName) {
         window.location.href = './login.html'
       } 
