@@ -221,7 +221,6 @@
         this[id] = document.querySelector(`#${id}`);
         return this[id];
       });
-      console.log({domList})
       
       // 新增
       addItem.addEventListener('click', () => {
@@ -238,7 +237,6 @@
       editItem.forEach(item => {
         const data = ['1234', '王富邦', '松山分行', '', '', '', '0277777777', 'fax', 'fubon001@fubon.com.tw'];
         item.addEventListener('click', () => {
-          console.log('edit')
           domList.forEach((dom, index) => {
             dom.value = data[index];
           })
