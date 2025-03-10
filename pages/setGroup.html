@@ -29,27 +29,21 @@
       </button>
     </div>
     <div class="table-responsive">
-      <table class="table table-striped table-sm tfb__table">
+      <table class="table table-sm tfb__table">
         <thead>
           <tr>
-            <th scope="col" class="tfb__tbhd">集團別</th>
-            <th scope="col" class="tfb__tbhd">事業部</th>
+            <th scope="col" class="tfb__tbhd w-25">集團別</th>
+            <th scope="col" class="tfb__tbhd w-10">事業部代號</th>
+            <th scope="col" class="tfb__tbhd">事業部名稱</th>
             <th scope="col" class="tfb__tbhd w-25">功能</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="text-center">台灣塑膠</td>
-            <td>
-              <p class="mb-1">1 塑膠部</p>
-              <p class="mb-1">2 台麗朗部</p>
-              <p class="mb-1">4 電石部</p>
-              <p class="mb-1">7 塑膠加工組</p>
-              <p class="mb-1">8 聚烤部</p>
-              <p class="mb-1">A 化學品部</p>
-              <p class="mb-1">P 聚丙烤部</p>
-            </td>
-            <td class="text-center">
+            <td rowspan="10" class="text-center">台灣塑膠</td>
+            <td class="border__bottom-white text-center">1</td>
+            <td class="border__bottom-white">塑膠部</td>
+            <td rowspan="10" class="text-center">
               <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
                 <span class="mdi mdi-pencil"></span>
                 編輯
@@ -61,17 +55,46 @@
             </td>
           </tr>
           <tr>
-            <td class="text-center">台塑石化</td>
-            <td>
-              <p class="mb-1">1 塑膠部</p>
-              <p class="mb-1">2 台麗朗部</p>
-              <p class="mb-1">4 電石部</p>
-              <p class="mb-1">7 塑膠加工組</p>
-              <p class="mb-1">8 聚烤部</p>
-              <p class="mb-1">A 化學品部</p>
-              <p class="mb-1">P 聚丙烤部</p>
-            </td>
-            <td class="text-center">
+            <td class="border__bottom-white text-center">2</td>
+            <td class="border__bottom-white">台麗朗部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">4</td>
+            <td class="border__bottom-white">電石部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">7</td>
+            <td class="border__bottom-white">塑膠加工組</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">8</td>
+            <td class="border__bottom-white">聚烤部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">A</td>
+            <td class="border__bottom-white">化學品部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">P</td>
+            <td class="border__bottom-white">聚丙烤部</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-sm tfb__table">
+        <thead>
+          <tr>
+            <th scope="col" class="tfb__tbhd w-25">集團別</th>
+            <th scope="col" class="tfb__tbhd w-10">事業部代號</th>
+            <th scope="col" class="tfb__tbhd">事業部名稱</th>
+            <th scope="col" class="tfb__tbhd w-25">功能</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="10" class="text-center">台塑石化</td>
+            <td class="border__bottom-white text-center">1</td>
+            <td class="border__bottom-white">塑膠部</td>
+            <td rowspan="10" class="text-center">
               <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
                 <span class="mdi mdi-pencil"></span>
                 編輯
@@ -83,18 +106,46 @@
             </td>
           </tr>
           <tr>
-            <td class="text-center">南亞塑膠</td>
-            <td>
-              <p class="mb-1">1 塑膠第一事業部</p>
-              <p class="mb-1">3 塑膠第三事業部</p>
-              <p class="mb-1">4 化工第二事業部</p>
-              <p class="mb-1">7 化工第一事業部</p>
-              <p class="mb-1">8 電子材料事業部</p>
-              <p class="mb-1">9 工務部</p>
-              <p class="mb-1">A 化工第三事業部</p>
-              <p class="mb-1">B 塑膠第二事業部</p>
-            </td>
-            <td class="text-center">
+            <td class="border__bottom-white text-center">2</td>
+            <td class="border__bottom-white">台麗朗部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">4</td>
+            <td class="border__bottom-white">電石部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">7</td>
+            <td class="border__bottom-white">塑膠加工組</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">8</td>
+            <td class="border__bottom-white">聚烤部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">A</td>
+            <td class="border__bottom-white">化學品部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">P</td>
+            <td class="border__bottom-white">聚丙烤部</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-sm tfb__table">
+        <thead>
+          <tr>
+            <th scope="col" class="tfb__tbhd w-25">集團別</th>
+            <th scope="col" class="tfb__tbhd w-10">事業部代號</th>
+            <th scope="col" class="tfb__tbhd">事業部名稱</th>
+            <th scope="col" class="tfb__tbhd w-25">功能</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="10" class="text-center">南亞塑膠</td>
+            <td class="border__bottom-white text-center">1</td>
+            <td class="border__bottom-white">塑膠第一事業部</td>
+            <td rowspan="10" class="text-center">
               <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
                 <span class="mdi mdi-pencil"></span>
                 編輯
@@ -104,6 +155,34 @@
                 刪除
               </button>
             </td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">3</td>
+            <td class="border__bottom-white">塑膠第三事業部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">4</td>
+            <td class="border__bottom-white">化工第二事業部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">7</td>
+            <td class="border__bottom-white">化工第一事業部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">8</td>
+            <td class="border__bottom-white">電子材料事業部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">9</td>
+            <td class="border__bottom-white">工務部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">A</td>
+            <td class="border__bottom-white">化工第三事業部</td>
+          </tr>
+          <tr>
+            <td class="border__bottom-white text-center">B</td>
+            <td class="border__bottom-white">塑膠第二事業部</td>
           </tr>
         </tbody>
       </table>

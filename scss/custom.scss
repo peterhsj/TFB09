@@ -461,6 +461,18 @@ footer {
   width: 15% !important;
 }
 
+.w-10 {
+  width: 10% !important;
+}
+
+.border {
+  &__bottom {
+    &-white {
+      border-bottom-color: #ffffff !important;
+    }
+  }
+}
+
 //#draftModalSub {
 //  background-color: rgba(0, 0, 0, .45);
 //}
