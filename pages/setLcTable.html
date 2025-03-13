@@ -32,10 +32,10 @@
     <div class="card">
       <div class="card-body bg-light">
         <div class="row">
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="appName" class="col-3 col-form-label text-end">申請人名稱</label>
-              <div class="col-9">
+              <label for="appName" class="col-2 col-md-3 col-form-label text-end text-nowrap">申請人名稱</label>
+              <div class="col-10 col-md-9">
                 <select id="appName" class="form-select">
                   <option selected>= 請選擇 =</option>
                   <option value="tpc">台塑</option>
@@ -46,18 +46,18 @@
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="appNo" class="col-3 col-form-label text-end">申請人統編</label>
-              <div class="col-9">
+              <label for="appNo" class="col-2 col-md-3 col-form-label text-end text-nowrap">申請人統編</label>
+              <div class="col-10 col-md-9">
                 <input type="text" class="form-control form-control-sm" id="appNo">
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="beneName" class="col-3 col-form-label text-end">受益人名稱</label>
-              <div class="col-9">
+              <label for="beneName" class="col-2 col-md-3 col-form-label text-end text-nowrap">受益人名稱</label>
+              <div class="col-10 col-md-9">
                 <select id="beneName" class="form-select">
                   <option selected>= 請選擇 =</option>
                   <option value="tpc">台塑</option>
@@ -68,37 +68,39 @@
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="beneNo" class="col-3 col-form-label text-end">受益人統編</label>
-              <div class="col-9">
+              <label for="beneNo" class="col-2 col-md-3 col-form-label text-end text-nowrap">受益人統編</label>
+              <div class="col-10 col-md-9">
                 <input type="text" class="form-control form-control-sm" id="beneNo">
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="appDate" class="col-3 col-form-label text-end">開狀月份</label>
-              <div class="col-9 d-flex align-items-center">
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="startDate" placeholder="請點選起始月份" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="startDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
+              <label for="appDate" class="col-2 col-md-3 col-form-label text-end text-nowrap">開狀月份</label>
+              <div class="col-10 col-md-9">
+                <div class="d-flex align-items-center">
+                  <div class="input-group flex-nowrap">
+                    <input type="datetime-local" id="startDate" placeholder="請點選起始月份" class="form-control form-control-sm tfb__calendar">
+                    <label class="input-group-text py-1" for="startDate">
+                      <span class="mdi mdi-calendar-month"></span>
+                    </label>
+                  </div>
+                  <span class="px-2">~</span>
+                  <div class="input-group flex-nowrap">
+                    <input type="datetime-local" id="endDate" placeholder="請點選結束月份" class="form-control form-control-sm tfb__calendar">
+                    <label class="input-group-text py-1" for="endDate">
+                      <span class="mdi mdi-calendar-month"></span>
+                    </label>
+                  </div>
                 </div>
-                <span class="px-2">~</span>
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="endDate" placeholder="請點選結束月份" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="endDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
+                <div class="text-danger d-flex text-nowrap pt-1">
+                  <span class="text-danger dateAlert pe-2 d-none pe-1">
+                    <span class="mdi mdi-close-thick"></span>
+                    結束日期須晚於開始日期
+                  </span>
                 </div>
-              </div>
-              <div class="text-end text-danger d-flex justify-content-end">
-                <span class="text-danger dateAlert pe-2 d-none">
-                  <span class="mdi mdi-close-thick"></span>
-                  結束日期須晚於開始日期
-                </span>
               </div>
             </div>
           </div>
@@ -127,11 +129,11 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
-              <th scope="col" class="tfb__tbhd">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
-              <th scope="col" class="tfb__tbhd">申請人統編</th>
-              <th scope="col" class="tfb__tbhd">產品別</th>
-              <th scope="col" class="tfb__tbhd">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -179,11 +181,11 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
-              <th scope="col" class="tfb__tbhd">開狀分行</th>
+              <th scope="col" class="tfb__tbh text-nowrap">開狀分行</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
-              <th scope="col" class="tfb__tbhd">申請人統編</th>
-              <th scope="col" class="tfb__tbhd">產品別</th>
-              <th scope="col" class="tfb__tbhd">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -231,11 +233,11 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
-              <th scope="col" class="tfb__tbhd">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
-              <th scope="col" class="tfb__tbhd">申請人統編</th>
-              <th scope="col" class="tfb__tbhd">產品別</th>
-              <th scope="col" class="tfb__tbhd">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -283,11 +285,11 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
-              <th scope="col" class="tfb__tbhd">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
-              <th scope="col" class="tfb__tbhd">申請人統編</th>
-              <th scope="col" class="tfb__tbhd">產品別</th>
-              <th scope="col" class="tfb__tbhd">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>

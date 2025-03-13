@@ -31,18 +31,18 @@
       <div class="card-body bg-light">
         <form>
           <div class="row">
-            <div class="col-4 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
               <div class="mb-3 row">
-                <label for="userAccount" class="col-3 col-form-label text-end">使用者帳號</label>
-                <div class="col-9">
+                <label for="userAccount" class="col-2 col-md-3 col-form-label text-end text-nowrap">使用者帳號</label>
+                <div class="col-10 col-md-9">
                   <input type="text" class="form-control form-control-sm" id="userAccount">
                 </div>
               </div>
             </div>
-            <div class="col-4 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
               <div class="mb-3 row">
-                <label for="type" class="col-3 col-form-label text-end">功能類別</label>
-                <div class="col-9">
+                <label for="type" class="col-2 col-md-3 col-form-label text-end text-nowrap">功能類別</label>
+                <div class="col-10 col-md-9">
                   <select id="type" class="form-select">
                     <option selected>= 請選擇 =</option>
                     <option value="0001">全部</option>
@@ -50,10 +50,10 @@
                 </div>
               </div>
             </div>
-            <div class="col-4 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
               <div class="mb-3 row">
-                <label for="result" class="col-3 col-form-label text-end">執行結果</label>
-                <div class="col-9">
+                <label for="result" class="col-2 col-md-3 col-form-label text-end text-nowrap">執行結果</label>
+                <div class="col-10 col-md-9">
                   <select id="result" class="form-select">
                     <option selected>= 請選擇 =</option>
                     <option value="0001">全部</option>
@@ -61,34 +61,38 @@
                 </div>
               </div>
             </div>
-            <div class="col-4 col-md-6 col-lg-4">
-            <div class="mb-3 row">
-              <label for="appDate" class="col-3 col-form-label text-end">存取日期</label>
-              <div class="col-9 d-flex align-items-center">
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="startDate" placeholder="請點選起日" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="startDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
-                </div>
-                <span class="px-2">~</span>
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="endDate" placeholder="請點選訖日" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="endDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="mb-3 row">
+                <label for="appDate" class="col-2 col-md-3 col-form-label text-end text-nowrap">存取日期</label>
+                <div class="col-10 col-md-9">
+                  <div class="d-flex align-items-center">
+                    <div class="input-group flex-nowrap">
+                      <input type="datetime-local" id="startDate" placeholder="請點選起日" class="form-control form-control-sm tfb__calendar">
+                      <label class="input-group-text py-1" for="startDate">
+                        <span class="mdi mdi-calendar-month"></span>
+                      </label>
+                    </div>
+                    <span class="px-2">~</span>
+                    <div class="input-group flex-nowrap">
+                      <input type="datetime-local" id="endDate" placeholder="請點選訖日" class="form-control form-control-sm tfb__calendar">
+                      <label class="input-group-text py-1" for="endDate">
+                        <span class="mdi mdi-calendar-month"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="text-danger d-flex text-nowrap pt-1">
+                    <span class="text-danger dateAlert d-none pe-1">
+                      <span class="mdi mdi-close-thick pe-1"></span>
+                      結束日期須晚於開始日期
+                      <span class="px-2">|</span>
+                    </span>
+                    <span>
+                      <span class="mdi mdi-alert-circle-outline pe-1"></span>
+                      選取區間不能超過 6 個月
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div class="text-end text-danger d-flex justify-content-end">
-                <span class="text-danger dateAlert pe-2 d-none">
-                  <span class="mdi mdi-close-thick"></span>
-                  結束日期須晚於開始日期
-                  <span class="px-2">|</span>
-                </span>
-                <span class="mdi mdi-alert-circle-outline pe-1"></span>
-                選取區間不能超過 6 個月
-              </div>
-            </div>
             </div>
           </div>
           <div class="row">
@@ -115,10 +119,10 @@
               <th scope="col" class="tfb__tbhd">使用者帳號</th>
               <th scope="col" class="tfb__tbhd">使用者姓名</th>
               <th scope="col" class="tfb__tbhd">存取日期</th>
-              <th scope="col" class="tfb__tbhd">執行功能</th>
-              <th scope="col" class="tfb__tbhd">執行模式</th>
-              <th scope="col" class="tfb__tbhd">執行結果</th>
-              <th scope="col" class="tfb__tbhd w-25">作業訊息</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">執行功能</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">執行模式</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">執行結果</th>
+              <th scope="col" class="tfb__tbhd text-nowrap w-25">作業訊息</th>
               <th scope="col" class="tfb__tbhd">修改前</th>
               <th scope="col" class="tfb__tbhd">修改後</th>
             </tr>

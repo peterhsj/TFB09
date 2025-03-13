@@ -61,11 +61,11 @@
               <table class="mb-0 table table-striped table-sm tfb__table">
                 <thead>
                   <tr>
-                    <th scope="col" class="tfb__tbhd">編號</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">編號</th>
                     <th scope="col" class="tfb__tbhd">統一編號</th>
                     <th scope="col" class="tfb__tbhd">公司名稱</th>
                     <th scope="col" class="tfb__tbhd">地址</th>
-                    <th scope="col" class="tfb__tbhd">負責人</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">負責人</th>
                     <th scope="col" class="tfb__tbhd">功能</th>
                   </tr>
                 </thead>
@@ -162,11 +162,11 @@
               <table class="mb-0 table table-striped table-sm tfb__table">
                 <thead>
                   <tr>
-                    <th scope="col" class="tfb__tbhd">編號</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">編號</th>
                     <th scope="col" class="tfb__tbhd">統一編號</th>
                     <th scope="col" class="tfb__tbhd">公司名稱</th>
                     <th scope="col" class="tfb__tbhd">地址</th>
-                    <th scope="col" class="tfb__tbhd">負責人</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">負責人</th>
                     <th scope="col" class="tfb__tbhd">功能</th>
                   </tr>
                 </thead>
@@ -263,11 +263,11 @@
               <table class="mb-0 table table-striped table-sm tfb__table">
                 <thead>
                   <tr>
-                    <th scope="col" class="tfb__tbhd">編號</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">編號</th>
                     <th scope="col" class="tfb__tbhd">統一編號</th>
                     <th scope="col" class="tfb__tbhd">公司名稱</th>
                     <th scope="col" class="tfb__tbhd">地址</th>
-                    <th scope="col" class="tfb__tbhd">負責人</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">負責人</th>
                     <th scope="col" class="tfb__tbhd">功能</th>
                   </tr>
                 </thead>
@@ -364,11 +364,11 @@
               <table class="mb-0 table table-striped table-sm tfb__table">
                 <thead>
                   <tr>
-                    <th scope="col" class="tfb__tbhd">編號</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">編號</th>
                     <th scope="col" class="tfb__tbhd">統一編號</th>
                     <th scope="col" class="tfb__tbhd">公司名稱</th>
                     <th scope="col" class="tfb__tbhd">地址</th>
-                    <th scope="col" class="tfb__tbhd">負責人</th>
+                    <th scope="col" class="tfb__tbhd text-nowrap">負責人</th>
                     <th scope="col" class="tfb__tbhd">功能</th>
                   </tr>
                 </thead>
@@ -458,7 +458,7 @@
       <div class="modal-content tfb__modal">
         <form id="setBeneficiaryForm">
           <div class="modal-header py-2 border-bottom-0">
-            <h5 class="modal-title fs-5 fw-bolder" id="beneficiaryModalLabel">
+            <h5 class="modal-title fs-5 fw-bolder" id="beneficiaryTitle">
               新增/編輯集團受益人
             </h5>
             <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -519,6 +519,7 @@
   <!-- Js -->
   <script>
     // 新增編輯的狀態顯示
+    const beneficiaryTitle = document.querySelector('#beneficiaryTitle');
     const addItemList = document.querySelectorAll('#addItem');
     const editItem = document.querySelectorAll('.editItem');
     const idList = ['groupNo', 'groupName', 'address', 'groupBoss', 'groupType'];
@@ -531,6 +532,7 @@
     // 新增
     addItemList.forEach((addItem, idx) => {
       addItem.addEventListener('click', () => {
+        beneficiaryTitle.textContent = '新增集團受益人';
         const setBeneficiaryForm = document.querySelector('#setBeneficiaryForm');
         setBeneficiaryForm.reset();
         domList.forEach(dom => {
@@ -544,6 +546,7 @@
     editItem.forEach((item) => {
       const data = ['11921209', '台灣塑膠工業股份有限公司台北辦事處', '台北市敦化北路201號', '李志村', 'tpc'];
       item.addEventListener('click', () => {
+        beneficiaryTitle.textContent = '編輯集團受益人';
         domList.forEach((dom, index) => {
           dom.value = data[index];
         })

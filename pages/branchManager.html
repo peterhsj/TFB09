@@ -134,7 +134,7 @@
         <div class="modal-content tfb__modal">
           <form id="branchManagerForm">
             <div class="modal-header py-2 border-bottom-0">
-              <h5 class="modal-title fs-5 fw-bolder" id="branchModalLabel">
+              <h5 class="modal-title fs-5 fw-bolder" id="branchTitle">
                 新增/編輯分行資料
               </h5>
               <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -144,55 +144,55 @@
                 <table class="mb-0 table table-sm tfb__table">
                   <tbody>
                     <tr>
-                      <th class="tfb__tbhd2">分行代碼</th>
+                      <th class="tfb__tbhd2 w-25">分行代碼</th>
                       <td class="bg-white">
                         <input id="branchNo" class="form-control form-control-sm" type="text" value="">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">負責人</th>
+                      <th class="tfb__tbhd2 w-25">負責人</th>
                       <td class="bg-white">
                         <input id="manager" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">分行中文名稱</th>
+                      <th class="tfb__tbhd2 w-25">分行中文名稱</th>
                       <td class="bg-white">
                         <input id="branchCN" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">分行英文名稱</th>
+                      <th class="tfb__tbhd2 w-25">分行英文名稱</th>
                       <td class="bg-white">
                         <input id="branchEN" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">分行中文地址</th>
+                      <th class="tfb__tbhd2 w-25">分行中文地址</th>
                       <td class="bg-white">
                         <input id="branchCAdd" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">分行英文地址</th>
+                      <th class="tfb__tbhd2 w-25">分行英文地址</th>
                       <td class="bg-white">
                         <input id="branchEAdd" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">電話</th>
+                      <th class="tfb__tbhd2 w-25">電話</th>
                       <td class="bg-white">
                         <input id="phone" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">傳真</th>
+                      <th class="tfb__tbhd2 w-25">傳真</th>
                       <td class="bg-white">
                         <input id="fax" class="form-control form-control-sm" type="text">
                       </td>
                     </tr>
                     <tr>
-                      <th class="tfb__tbhd2">Email</th>
+                      <th class="tfb__tbhd2 w-25">Email</th>
                       <td class="bg-white">
                         <input id="email" class="form-control form-control-sm" type="email">
                       </td>
@@ -213,6 +213,7 @@
     <!-- Js -->
     <script>
       // 新增編輯的狀態顯示
+      const branchTitle = document.querySelector('#branchTitle');
       const addItem = document.querySelector('#addItem');
       const editItem = document.querySelectorAll('.editItem');
       const switchItem = document.querySelectorAll('.tfb__switch');
@@ -224,6 +225,7 @@
       
       // 新增
       addItem.addEventListener('click', () => {
+        branchTitle.textContent = '新增分行資料';
         const branchManagerForm = document.querySelector('#branchManagerForm');
         domList.forEach(dom => {
           dom.removeAttribute('readonly');
@@ -237,6 +239,7 @@
       editItem.forEach(item => {
         const data = ['1234', '王富邦', '松山分行', '', '', '', '0277777777', 'fax', 'fubon001@fubon.com.tw'];
         item.addEventListener('click', () => {
+          branchTitle.textContent = '編輯分行資料';
           domList.forEach((dom, index) => {
             dom.value = data[index];
           })

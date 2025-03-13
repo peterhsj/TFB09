@@ -44,8 +44,8 @@
             <td class="text-center">預設</td>
             <td class="text-center w-25">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
               <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delRoleManagerModal">
                 <span class="mdi mdi-trash-can-outline"></span>
@@ -59,8 +59,8 @@
             <td class="text-center">一般</td>
             <td class="text-center">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
               <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delRoleManagerModal">
                 <span class="mdi mdi-trash-can-outline"></span>
@@ -74,8 +74,8 @@
             <td class="text-center">一般</td>
             <td class="text-center">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
               <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delRoleManagerModal">
                 <span class="mdi mdi-trash-can-outline"></span>
@@ -89,8 +89,8 @@
             <td class="text-center">一般</td>
             <td class="text-center">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#roleManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
               <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delRoleManagerModal">
                 <span class="mdi mdi-trash-can-outline"></span>
@@ -110,7 +110,7 @@
       <div class="modal-content tfb__modal">
         <form>
           <div class="modal-header py-2 border-bottom-0">
-            <h5 class="modal-title fs-5 fw-bolder" id="roleManagerModalLabel">
+            <h5 class="modal-title fs-5 fw-bolder" id="roleManagerTitle">
               新增/編輯角色
             </h5>
             <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -150,7 +150,7 @@
               <div class="card-body">
                 <div class="container">
                   <div class="row">
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       查詢作業
                     </div>
                     <div class="col-10 py-1">
@@ -167,7 +167,7 @@
                         </label>
                       </div>
                     </div>
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       押匯審核
                     </div>
                     <div class="col-10 py-1">
@@ -184,7 +184,7 @@
                         </label>
                       </div>
                     </div>
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       管理作業
                     </div>
                     <div class="col-10 py-1">
@@ -201,7 +201,7 @@
                         <label class="form-check-label" for="option33">台塑網平台之企業信用狀統計表</label>
                       </div>
                     </div>
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       系統紀錄
                     </div>
                     <div class="col-10 py-1">
@@ -214,7 +214,7 @@
                         <label class="form-check-label" for="option42">系統傳送紀錄</label>
                       </div>
                     </div>
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       帳號維護
                     </div>
                     <div class="col-10 py-1">
@@ -225,7 +225,7 @@
                         </label>
                       </div>
                     </div>
-                    <div class="col-2 text-end py-1">
+                    <div class="col-2 text-end text-nowrap py-1">
                       角色維護
                     </div>
                     <div class="col-10 py-1">
@@ -235,7 +235,7 @@
                           角色維護
                         </label>
                       </div>
-                    </div><div class="col-2 text-end py-1">
+                    </div><div class="col-2 text-end text-nowrap py-1">
                       分行資料維護
                     </div>
                     <div class="col-10 py-1">
@@ -263,6 +263,7 @@
   <!-- Js -->
   <script>
     // 新增編輯的狀態顯示
+    const roleManagerTitle = document.querySelector('#roleManagerTitle');
     const addItem = document.querySelector('#addItem');
     const editItem = document.querySelectorAll('.editItem');
     const idList = ['roleNo', 'roleName', 'roleType'];
@@ -273,6 +274,7 @@
     
     // 新增
     addItem.addEventListener('click', () => {
+      roleManagerTitle.textContent = '新增角色及權限設定';
       domList.forEach(dom => {
         dom.removeAttribute('readonly');
         dom.removeAttribute('disabled');
@@ -284,6 +286,7 @@
     editItem.forEach(item => {
       const data = ['2', '分行管理員', '一般'];
       item.addEventListener('click', () => {
+        roleManagerTitle.textContent = '編輯角色權限';
         domList.forEach((dom, index) => {
           dom.setAttribute('readonly', '');
           dom.setAttribute('disabled', '');

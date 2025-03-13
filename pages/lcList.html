@@ -30,18 +30,18 @@
     <div class="card">
       <div class="card-body bg-light">
         <div class="row">
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-3 row">
-              <label for="lcNo" class="col-3 col-form-label text-end text-nowrap">信用狀號碼</label>
-              <div class="col-9">
+              <label for="lcNo" class="col-2 col-md-3 col-form-label text-end text-nowrap">信用狀號碼</label>
+              <div class="col-10 col-md-9">
                 <input type="text" class="form-control form-control-sm" id="lcNo">
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
-            <div class="mb-3 row">
-              <label for="status" class="col-3 col-form-label text-end text-nowrap">狀態</label>
-              <div class="col-9">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="mb-2 row">
+              <label for="status" class="col-2 col-md-3 col-form-label text-end text-nowrap">狀態</label>
+              <div class="col-10 col-md-9">
                 <select id="branchNo" class="form-select">
                   <option selected>= 請選擇 =</option>
                   <option value="0001"></option>
@@ -51,51 +51,55 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-4 col-md-6 col-lg-4">
-            <div class="mb-3 row">
-              <label for="beneNo" class="col-3 col-form-label text-end text-nowrap">申請人統編</label>
-              <div class="col-9">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="mb-2 row">
+              <label for="beneNo" class="col-2 col-md-3 col-form-label text-end text-nowrap">申請人統編</label>
+              <div class="col-10 col-md-9">
                 <input type="text" class="form-control form-control-sm" id="beneNo">
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-6 col-lg-4">
-            <div class="mb-3 row">
-              <label for="beneInNo" class="col-3 col-form-label text-end text-nowrap">受益人統編</label>
-              <div class="col-9">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="mb-2 row">
+              <label for="beneInNo" class="col-2 col-md-3 col-form-label text-end text-nowrap">受益人統編</label>
+              <div class="col-10 col-md-9">
                 <input type="text" class="form-control form-control-sm" id="beneInNo">
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-4 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="row">
-              <label for="appDate" class="col-3 col-form-label text-end text-nowrap">申請日期</label>
-              <div class="col-9 d-flex align-items-center">
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="startDate" placeholder="請點選起日" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="startDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
+              <label for="appDate" class="col-2 col-md-3 col-form-label text-end text-nowrap">申請日期</label>
+              <div class="col-10 col-md-9">
+                <div class="d-flex align-items-center">                  
+                  <div class="input-group flex-nowrap">
+                    <input type="datetime-local" id="startDate" placeholder="請點選起日" class="form-control form-control-sm tfb__calendar">
+                    <label class="input-group-text py-1" for="startDate">
+                      <span class="mdi mdi-calendar-month"></span>
+                    </label>
+                  </div>
+                  <span class="px-2">~</span>
+                  <div class="input-group flex-nowrap">
+                    <input type="datetime-local" id="endDate" placeholder="請點選訖日" class="form-control form-control-sm tfb__calendar">
+                    <label class="input-group-text py-1" for="endDate">
+                      <span class="mdi mdi-calendar-month"></span>
+                    </label>
+                  </div>
                 </div>
-                <span class="px-2">~</span>
-                <div class="input-group flex-nowrap">
-                  <input type="datetime-local" id="endDate" placeholder="請點選訖日" class="form-control form-control-sm tfb__calendar">
-                  <label class="input-group-text py-1" for="endDate">
-                    <span class="mdi mdi-calendar-month"></span>
-                  </label>
+                <div class="text-danger d-flex text-nowrap pt-1">
+                  <span class="text-danger dateAlert pe-2 d-none pe-1">
+                    <span class="mdi mdi-close-thick"></span>
+                    結束日期須晚於開始日期
+                    <span class="px-2">|</span>
+                  </span>
+                  <span>
+                    <span class="mdi mdi-alert-circle-outline pe-1"></span>
+                    選取區間不能大於一年
+                  </span>
                 </div>
               </div>
-            </div>
-            <div class="text-end text-danger d-flex justify-content-end">
-              <span class="text-danger dateAlert pe-2 d-none">
-                  <span class="mdi mdi-close-thick"></span>
-                  結束日期須晚於開始日期
-                  <span class="px-2">|</span>
-                </span>
-              <span class="mdi mdi-alert-circle-outline pe-1"></span>
-              選取區間不能大於一年
             </div>
           </div>
         </div>
@@ -119,12 +123,12 @@
         <table class="mb-0 table table-striped table-sm tfb__table">
           <thead>
             <tr>
-              <th scope="col" class="tfb__tbhd">開狀銀行</th>
-              <th scope="col" class="tfb__tbhd">開狀人統一編號</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀銀行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀人統一編號</th>
               <th scope="col" class="tfb__tbhd">信用狀號碼</th>
               <th scope="col" class="tfb__tbhd">信用狀序號</th>
               <th scope="col" class="tfb__tbhd">幣別</th>
-              <th scope="col" class="tfb__tbhd">開狀申請時間</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀申請時間</th>
               <th scope="col" class="tfb__tbhd">功能</th>
             </tr>
           </thead>
@@ -137,7 +141,7 @@
               <td class="text-center">TWD - 新台幣</td>
               <td class="text-center">2025/01/20</td>
               <td class="text-center">
-                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#detailModal">                  
+                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#detailModal">                  
                   <span class="mdi mdi-note-text"></span>
                   明細
                 </button>
@@ -151,7 +155,7 @@
               <td class="text-center">TWD - 新台幣</td>
               <td class="text-center">2025/01/20</td>
               <td class="text-center">
-                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#detailModal">                  
+                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#detailModal">                  
                   <span class="mdi mdi-note-text"></span>
                   明細
                 </button>
@@ -165,7 +169,7 @@
               <td class="text-center">TWD - 新台幣</td>
               <td class="text-center">2025/01/20</td>
               <td class="text-center">
-                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#detailModal">                  
+                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#detailModal">                  
                   <span class="mdi mdi-note-text"></span>
                   明細
                 </button>

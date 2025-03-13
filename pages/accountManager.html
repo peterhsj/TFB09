@@ -54,8 +54,8 @@
             </td>
             <td class="text-center w-25">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
             </td>
           </tr>
@@ -73,8 +73,8 @@
             </td>
             <td class="text-center w-25">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
             </td>
           </tr>
@@ -92,8 +92,8 @@
             </td>
             <td class="text-center w-25">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
             </td>
           </tr>
@@ -111,8 +111,8 @@
             </td>
             <td class="text-center w-25">
               <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#accountManagerModal">
-                <span class="mdi mdi-cog"></span>
-                設定
+                <span class="mdi mdi-pencil"></span>
+                編輯
               </button>
             </td>
           </tr>          
@@ -127,7 +127,7 @@
       <div class="modal-content tfb__modal">
         <form id="accountManagerForm">
           <div class="modal-header py-2 border-bottom-0">
-            <h5 class="modal-title fs-5 fw-bolder" id="accountManagerModalLabel">
+            <h5 class="modal-title fs-5 fw-bolder" id="accountManagerTitle">
               新增/編輯使用者帳號
             </h5>
             <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -199,6 +199,7 @@
   <!-- Js -->
   <script>
     // 新增編輯的狀態顯示
+    const accountManagerTitle = document.querySelector('#accountManagerTitle');
     const addItem = document.querySelector('#addItem');
     const editItem = document.querySelectorAll('.editItem');
     const switchItem = document.querySelectorAll('.tfb__switch');
@@ -210,6 +211,7 @@
     
     // 新增
     addItem.addEventListener('click', () => {
+      accountManagerTitle.textContent = '新增使用者帳號';
       const accountManagerForm = document.querySelector('#accountManagerForm');
       domList.forEach(dom => {
         dom.removeAttribute('readonly');
@@ -223,6 +225,7 @@
     editItem.forEach(item => {
       const data = ['FUBON001', '王富邦', '0001', '3', '0212345678', 'fubon001@fubon.com.tw'];
       item.addEventListener('click', () => {
+        accountManagerTitle.textContent = '編輯使用者帳號';
         domList.forEach((dom, index) => {
           dom.value = data[index];
         })
