@@ -10284,6 +10284,10 @@ footer {
   font-size: 1.15rem !important;
 }
 
+.fs-0-8 {
+  font-size: 0.8rem !important;
+}
+
 .tfb__title {
   padding-left: 10px;
   color: #3e7db2;

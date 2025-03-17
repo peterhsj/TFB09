@@ -107,17 +107,17 @@
         </div>
         <div class="row">
           <div class="col text-end py-1">
-            <button type="reset" id="reset" class="me-2 px-3 btn btn-sm tfb__btn-reset">重設</button>
+            <button type="reset" id="reset" class="me-2 px-3 btn btn-sm tfb__btn-reset">清空</button>
             <button type="button" id="search" class="px-3 btn btn-sm tfb__btn-default">查詢</button>
           </div>
         </div>
       </div>
     </div>
     <div id="setLcList" class="tfb__hide">
-      <h1 class="pt-4 pb-2 fs-4 fw-bolder">台塑企業信用狀統計查詢清冊</h1>
+      <h1 class="pt-4 pb-2 fs-4 fw-bolder">台塑企業信用狀統計彙總表</h1>
       <div class="py-2 text-end">
         <button type="button" id="downloadExcel" class="px-3 btn btn-sm tfb__btn-default">
-          <span class="mdi mdi-file-excel"></span>
+          <span class="mdi mdi-tray-arrow-down"></span>
           匯出 Excel 檔
         </button>
       </div>
@@ -130,10 +130,12 @@
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
               <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
               <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">幣別</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -142,32 +144,38 @@
             <tr>
               <td>台灣塑膠工業股份有限公司台北辦事處</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>大仁股份有限公司</td>
               <td class="text-center">12346678</td>
               <td></td>
-              <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-end">3</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">300,000</td>
+              <td class="text-end">300,000</td>
             </tr>
             <tr>
               <td>台灣塑膠工業股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>二仁股份有限公司</td>
               <td class="text-center">87654321</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">20,000</td>
+              <td class="text-end">20,000</td>
             </tr>
             <tr>
               <td>台灣塑膠工業股份有限公司台高雄辦事處</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>三仁股份有限公司</td>
               <td class="text-center">96325874</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">30,000</td>
+              <td class="text-end">30,000</td>
             </tr>
             
           </tbody>
@@ -181,11 +189,13 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
-              <th scope="col" class="tfb__tbh text-nowrap">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
               <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
               <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">幣別</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -194,32 +204,38 @@
             <tr>
               <td>台灣化學纖維股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>大仁股份有限公司</td>
               <td class="text-center">12346678</td>
               <td></td>
-              <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-end">3</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">300,000</td>
+              <td class="text-end">300,000</td>
             </tr>
             <tr>
               <td>台灣化學纖維股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>二仁股份有限公司</td>
               <td class="text-center">87654321</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">20,000</td>
+              <td class="text-end">20,000</td>
             </tr>
             <tr>
               <td>台灣化學纖維股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>三仁股份有限公司</td>
               <td class="text-center">96325874</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">30,000</td>
+              <td class="text-end">30,000</td>
             </tr>
             
           </tbody>
@@ -234,10 +250,12 @@
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
               <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
               <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">幣別</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -246,32 +264,38 @@
             <tr>
               <td>台塑石化股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>大仁股份有限公司</td>
               <td class="text-center">12346678</td>
               <td></td>
-              <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-end">3</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">300,000</td>
+              <td class="text-end">300,000</td>
             </tr>
             <tr>
               <td>台塑石化股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>二仁股份有限公司</td>
               <td class="text-center">87654321</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">20,000</td>
+              <td class="text-end">20,000</td>
             </tr>
             <tr>
               <td>台塑石化股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>三仁股份有限公司</td>
               <td class="text-center">96325874</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">30,000</td>
+              <td class="text-end">30,000</td>
             </tr>
             
           </tbody>
@@ -286,10 +310,12 @@
             <tr>
               <th scope="col" class="tfb__tbhd w-25">受益人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">開狀分行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
               <th scope="col" class="tfb__tbhd">申請人</th>
               <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
               <th scope="col" class="tfb__tbhd text-nowrap">產品別</th>
               <th scope="col" class="tfb__tbhd text-nowrap">筆數</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">幣別</th>
               <th scope="col" class="tfb__tbhd">金額 (單位:元)</th>
               <th scope="col" class="tfb__tbhd">押匯金額 (單位:元)</th>
             </tr>
@@ -298,32 +324,38 @@
             <tr>
               <td>南亞塑膠工業股份有限公司仁武廠</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>大仁股份有限公司</td>
               <td class="text-center">12346678</td>
               <td></td>
-              <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-end">3</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">300,000</td>
+              <td class="text-end">300,000</td>
             </tr>
             <tr>
               <td>南亞塑膠工業股份有限公司</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>二仁股份有限公司</td>
               <td class="text-center">87654321</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">20,000</td>
+              <td class="text-end">20,000</td>
             </tr>
             <tr>
               <td>南亞塑膠工業股份有限公司仁武廠</td>
               <td class="text-center">台北分行</td>
+              <td class="text-center">2025/01/20</td>
               <td>三仁股份有限公司</td>
               <td class="text-center">96325874</td>
               <td></td>
               <td class="text-end">1</td>
-              <td class="text-end">100,000</td>
-              <td class="text-end">100,000</td>
+              <td class="text-center">TWD - 新台幣</td>
+              <td class="text-end">30,000</td>
+              <td class="text-end">30,000</td>
             </tr>
             
           </tbody>
