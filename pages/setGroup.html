@@ -10,182 +10,735 @@
 </head>
 
 <body>
-  <!-- 台塑網平台之集團及事業部 -->
-  <div id="setGroup" class="py-4 px-5">
+  <!-- 台塑集團及事業部 -->
+  <div id="setBeneficiary" class="py-4 px-5">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
       <ol class="breadcrumb fs-6">
         <li class="breadcrumb-item">
           <a id="homePage" class="tfb__path" href="javascript:void(0)">首頁</a>
         </li>
         <li class="breadcrumb-item">管理作業</li>
-        <li class="breadcrumb-item active" aria-current="page">台塑網平台之集團及事業部</li>
+        <li class="breadcrumb-item active" aria-current="page">台塑集團及事業部</li>
       </ol>
     </nav>
-    <h1 class="fs-4 fw-bolder">集團及事業部</h1>
-    <div class="py-2 text-end">
-      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="addModal()">
-        <span class="mdi mdi-plus"></span>
-        新增
-      </button>
+    <h1 class="mb-3 fs-4 fw-bolder">台塑集團及事業部資料維護</h1>
+    <div class="d-flex justify-content-between">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link tfb__tab active" id="fpc-tab" data-bs-toggle="tab" data-bs-target="#fpc" type="button" role="tab" aria-controls="fpc" aria-selected="true">
+            台灣塑膠
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link tfb__tab" id="fcfc-tab" data-bs-toggle="tab" data-bs-target="#fcfc" type="button" role="tab" aria-controls="fcfc" aria-selected="false">
+            台灣化學纖維
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link tfb__tab" id="fpcc-tab" data-bs-toggle="tab" data-bs-target="#fpcc" type="button" role="tab" aria-controls="fpcc" aria-selected="false">
+            台塑石化
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link tfb__tab" id="npc-tab" data-bs-toggle="tab" data-bs-target="#npc" type="button" role="tab" aria-controls="npc" aria-selected="false">
+            南亞塑膠
+          </button>
+        </li>
+      </ul>
+      <div>
+        <button type="button" id="addGroup" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#groupModal">
+          <span class="mdi mdi-plus"></span>
+          新增集團及事業部
+        </button>
+      </div>
     </div>
-    <div class="table-responsive">
-      <table class="table table-sm tfb__table">
-        <thead>
-          <tr>
-            <th scope="col" class="tfb__tbhd text-nowrap w-25">集團別</th>
-            <th scope="col" class="tfb__tbhd text-nowrap w-10">事業部代號</th>
-            <th scope="col" class="tfb__tbhd text-nowrap">事業部名稱</th>
-            <th scope="col" class="tfb__tbhd w-25">功能</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="10" class="text-center">台灣塑膠</td>
-            <td class="border__bottom-white text-center">1</td>
-            <td class="border__bottom-white">塑膠部</td>
-            <td rowspan="10" class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
-                <span class="mdi mdi-pencil"></span>
-                編輯集團及事業部
-              </button>
-              <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除集團及事業部
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">2</td>
-            <td class="border__bottom-white">台麗朗部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">4</td>
-            <td class="border__bottom-white">電石部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">7</td>
-            <td class="border__bottom-white">塑膠加工組</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">8</td>
-            <td class="border__bottom-white">聚烤部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">A</td>
-            <td class="border__bottom-white">化學品部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">P</td>
-            <td class="border__bottom-white">聚丙烤部</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="table table-sm tfb__table">
-        <thead>
-          <tr>
-            <th scope="col" class="tfb__tbhd text-nowrap w-25">集團別</th>
-            <th scope="col" class="tfb__tbhd text-nowrap w-10">事業部代號</th>
-            <th scope="col" class="tfb__tbhd text-nowrap">事業部名稱</th>
-            <th scope="col" class="tfb__tbhd w-25">功能</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="10" class="text-center">台塑石化</td>
-            <td class="border__bottom-white text-center">1</td>
-            <td class="border__bottom-white">塑膠部</td>
-            <td rowspan="10" class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
-                <span class="mdi mdi-pencil"></span>
-                編輯集團及事業部
-              </button>
-              <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除集團及事業部
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">2</td>
-            <td class="border__bottom-white">台麗朗部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">4</td>
-            <td class="border__bottom-white">電石部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">7</td>
-            <td class="border__bottom-white">塑膠加工組</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">8</td>
-            <td class="border__bottom-white">聚烤部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">A</td>
-            <td class="border__bottom-white">化學品部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">P</td>
-            <td class="border__bottom-white">聚丙烤部</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="table table-sm tfb__table">
-        <thead>
-          <tr>
-            <th scope="col" class="tfb__tbhd text-nowrap w-25">集團別</th>
-            <th scope="col" class="tfb__tbhd text-nowrap w-10">事業部代號</th>
-            <th scope="col" class="tfb__tbhd text-nowrap">事業部名稱</th>
-            <th scope="col" class="tfb__tbhd w-25">功能</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="10" class="text-center">南亞塑膠</td>
-            <td class="border__bottom-white text-center">1</td>
-            <td class="border__bottom-white">塑膠第一事業部</td>
-            <td rowspan="10" class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#groupModal" onclick="editItem()">
-                <span class="mdi mdi-pencil"></span>
-                編輯集團及事業部
-              </button>
-              <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red text-nowrap" data-bs-toggle="modal" data-bs-target="#delModal">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除集團及事業部
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">3</td>
-            <td class="border__bottom-white">塑膠第三事業部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">4</td>
-            <td class="border__bottom-white">化工第二事業部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">7</td>
-            <td class="border__bottom-white">化工第一事業部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">8</td>
-            <td class="border__bottom-white">電子材料事業部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">9</td>
-            <td class="border__bottom-white">工務部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">A</td>
-            <td class="border__bottom-white">化工第三事業部</td>
-          </tr>
-          <tr>
-            <td class="border__bottom-white text-center">B</td>
-            <td class="border__bottom-white">塑膠第二事業部</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="fpc" role="tabpanel" aria-labelledby="fpc-tab">
+        <div class="card rounded-0 rounded-bottom">
+          <div class="card-body bg-light">
+            <div class="mb-2 align-items-center d-flex justify-content-between">
+              <h5 class="mb-0 py-1 fs-6 fw-bolder tfb__title">
+                台灣塑膠工業
+              </h5>
+              <div>
+                <button type="button" class="addItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                  <span class="mdi mdi-plus"></span>
+                  新增事業部
+                </button>
+                <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('group')">
+                  <span class="mdi mdi-trash-can-outline"></span>
+                  刪除集團
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive bg-white">
+              <table class="mb-0 table table-striped table-sm tfb__table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="tfb__tbhd">事業部代碼</th>
+                    <th scope="col" class="tfb__tbhd">事業部名稱</th>
+                    <th scope="col" class="tfb__tbhd w-20">功能</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">塑膠部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">2</td>
+                    <td class="text-center">台麗朗部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">4</td>
+                    <td class="text-center">電石部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">7</td>
+                    <td class="text-center">塑膠加工組</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">8</td>
+                    <td class="text-center">聚烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">A</td>
+                    <td class="text-center">化學品部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">P</td>
+                    <td class="text-center">聚丙烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="mt-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex text-nowrap">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">第一頁</a>
+                  </li>
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">
+                      <span class="mdi mdi-chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">
+                      <span class="mdi mdi-chevron-right"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">最後一頁</a>
+                  </li>
+                </ul>
+                <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
+                  <input type="text" class="form-control" value="">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
+                  <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="tfb__text">總筆數：</span>7 / <span class="tfb__text">總頁數：</span>1
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="fcfc" role="tabpanel" aria-labelledby="fcfc-tab">
+        <div class="card rounded-0 rounded-bottom">
+          <div class="card-body bg-light">
+            <div class="mb-2 align-items-center d-flex justify-content-between">
+              <h5 class="mb-0 py-1 fs-6 fw-bolder tfb__title">
+                台灣化學纖維股份有限公司
+              </h5>
+              <div>
+                <button type="button" class="addItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                  <span class="mdi mdi-plus"></span>
+                  新增事業部
+                </button>
+                <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('group')">
+                  <span class="mdi mdi-trash-can-outline"></span>
+                  刪除集團
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive bg-white">
+              <table class="mb-0 table table-striped table-sm tfb__table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="tfb__tbhd">事業部代碼</th>
+                    <th scope="col" class="tfb__tbhd">事業部名稱</th>
+                    <th scope="col" class="tfb__tbhd w-20">功能</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">塑膠部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">2</td>
+                    <td class="text-center">台麗朗部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">4</td>
+                    <td class="text-center">電石部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">7</td>
+                    <td class="text-center">塑膠加工組</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">8</td>
+                    <td class="text-center">聚烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">A</td>
+                    <td class="text-center">化學品部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">P</td>
+                    <td class="text-center">聚丙烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="mt-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex text-nowrap">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">第一頁</a>
+                  </li>
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">
+                      <span class="mdi mdi-chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">
+                      <span class="mdi mdi-chevron-right"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">最後一頁</a>
+                  </li>
+                </ul>
+                <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
+                  <input type="text" class="form-control" value="">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
+                  <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="tfb__text">總筆數：</span>7 / <span class="tfb__text">總頁數：</span>1
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="fpcc" role="tabpanel" aria-labelledby="fpcc-tab">
+        <div class="card rounded-0 rounded-bottom">
+          <div class="card-body bg-light">
+            <div class="mb-2 align-items-center d-flex justify-content-between">
+              <h5 class="mb-0 py-1 fs-6 fw-bolder tfb__title">
+                台塑石化股份有限公司
+              </h5>
+              <div>
+                <button type="button" class="addItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                  <span class="mdi mdi-plus"></span>
+                  新增事業部
+                </button>
+                <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('group')">
+                  <span class="mdi mdi-trash-can-outline"></span>
+                  刪除集團
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive bg-white">
+              <table class="mb-0 table table-striped table-sm tfb__table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="tfb__tbhd">事業部代碼</th>
+                    <th scope="col" class="tfb__tbhd">事業部名稱</th>
+                    <th scope="col" class="tfb__tbhd w-20">功能</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">塑膠部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">2</td>
+                    <td class="text-center">台麗朗部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">4</td>
+                    <td class="text-center">電石部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">7</td>
+                    <td class="text-center">塑膠加工組</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">8</td>
+                    <td class="text-center">聚烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">A</td>
+                    <td class="text-center">化學品部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">P</td>
+                    <td class="text-center">聚丙烤部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="mt-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex text-nowrap">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">第一頁</a>
+                  </li>
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">
+                      <span class="mdi mdi-chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">
+                      <span class="mdi mdi-chevron-right"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">最後一頁</a>
+                  </li>
+                </ul>
+                <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
+                  <input type="text" class="form-control" value="">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
+                  <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="tfb__text">總筆數：</span>7 / <span class="tfb__text">總頁數：</span>1
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="npc" role="tabpanel" aria-labelledby="npc-tab">
+        <div class="card rounded-0 rounded-bottom">
+          <div class="card-body bg-light">
+            <div class="mb-2 align-items-center d-flex justify-content-between">
+              <h5 class="mb-0 py-1 fs-6 fw-bolder tfb__title">
+                南亞塑膠工業股份有限公司
+              </h5>
+              <div>
+                <button type="button" class="addItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                  <span class="mdi mdi-plus"></span>
+                  新增事業部
+                </button>
+                <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('group')">
+                  <span class="mdi mdi-trash-can-outline"></span>
+                  刪除集團
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive bg-white">
+              <table class="mb-0 table table-striped table-sm tfb__table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="tfb__tbhd">事業部代碼</th>
+                    <th scope="col" class="tfb__tbhd">事業部名稱</th>
+                    <th scope="col" class="tfb__tbhd w-20">功能</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">塑膠第一事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">3</td>
+                    <td class="text-center">塑膠第三事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">4</td>
+                    <td class="text-center">化工第二事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">7</td>
+                    <td class="text-center">化工第一事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">8</td>
+                    <td class="text-center">電子材料事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">9</td>
+                    <td class="text-center">工務部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">A</td>
+                    <td class="text-center">化工第三事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">B</td>
+                    <td class="text-center">塑膠第二事業部</td>
+                    <td class="text-center">
+                      <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#divisionModal">
+                        <span class="mdi mdi-pencil"></span>
+                        編輯
+                      </button>
+                      <button type="button" class="my-1 px-3 btn btn-sm tfb__btn-red" data-bs-toggle="modal" data-bs-target="#delModal" onclick="delHandler('item')">
+                        <span class="mdi mdi-trash-can-outline"></span>
+                        刪除
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="mt-3 d-flex align-items-center justify-content-between">
+              <div class="d-flex text-nowrap">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">第一頁</a>
+                  </li>
+                  <li class="page-item tfb__page-item disabled">
+                    <a class="page-link">
+                      <span class="mdi mdi-chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">
+                      <span class="mdi mdi-chevron-right"></span>
+                    </a>
+                  </li>
+                  <li class="page-item tfb__page-item">
+                    <a class="page-link" href="#">最後一頁</a>
+                  </li>
+                </ul>
+                <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
+                  <input type="text" class="form-control" value="">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
+                  <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="tfb__text">總筆數：</span>8 / <span class="tfb__text">總頁數：</span>1
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -196,7 +749,7 @@
         <form>
           <div class="modal-header py-2 border-bottom-0">
             <h5 class="modal-title fs-5 fw-bolder">
-              <span id="groupTitle">新增/編輯集團及事業部資料</span>
+              <span id="groupTitle">新增集團及事業部</span>
               <span class="ms-2 fs-0-8 tfb__text text-danger">
                 皆為為必填欄位
               </span>
@@ -258,38 +811,67 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- divisionModal -->
+  <div class="modal fade" id="divisionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="divisionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content tfb__modal">
+        <form>
+          <div class="modal-header py-2 border-bottom-0">
+            <h5 class="modal-title fs-5 fw-bolder">
+              <span id="divisionTitle">新增/編輯事業部</span>
+              <span class="ms-2 fs-0-8 tfb__text text-danger">
+                皆為為必填欄位
+              </span>
+            </h5>
+            <button type="button" class="m-0 p-0 btn-close tfb__btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body bg-light">
+            <div class="table-responsive bg-white">
+              <table class="table table-sm tfb__table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="tfb__tbhd">事業部代碼</th>
+                    <th scope="col" class="tfb__tbhd">事業部名稱</th>
+                  </tr>
+                </thead>
+                <tbody id="departList">
+                  <tr>
+                    <td>
+                      <input id="divisionNo" class="form-control form-control-sm" type="text">
+                    </td>
+                    <td>
+                      <input id="divisionName" class="form-control form-control-sm" type="text">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center border-top-0">
+            <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">取消</button>
+            <button type="reset" class="px-3 btn border-1 tfb__btn-cancel">清空</button>
+            <button type="button" id="divisionConfirmBtn" class="px-3 btn border-1 tfb__btn-confirm" onclick="divisionConfirm()">確認</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Js -->
   <script>
-    const groupTitle = document.querySelector('#groupTitle');
-    // 新增
-    function addModal() {
-      const departList = document.querySelector('#departList');
-      groupTitle.textContent = '新增集團及事業部資料';
-      groupName.value = '';
-      departList.innerHTML = `
-        <tr>
-          <td>
-            <input class="form-control form-control-sm" type="text">
-          </td>
-          <td>
-            <input class="form-control form-control-sm" type="text">
-          </td>                    
-          <td class="text-center">
-            <button type="button" class="delDepartItem my-1 px-3 btn btn-sm tfb__btn-red" onclick="delDepart(event)">
-              <span class="mdi mdi-trash-can-outline"></span>
-              刪除
-            </button>
-          </td>
-        </tr>
-      `;
-    };
+    // 新增編輯的狀態顯示
+    const groupList = ['tpc', 'fcfc', 'fpcc', 'npc'];    
+    const idList = ['groupNo', 'groupName', 'address', 'groupBoss', 'groupType'];
+    const domList = idList.map(id => {
+      this[id] = document.querySelector(`#${id}`);
+      return this[id];
+    });
 
     // 新增列
     function addRow() {
       const addDepartItem = document.querySelector('#addDepartItem');
       const departList = document.querySelector('#departList');
-      const newRow = document.createElement('tr');
-  
+      const newRow = document.createElement('tr');  
       newRow.innerHTML = `
         <tr>
           <td>
@@ -321,61 +903,44 @@
       $(groupModal).modal('hide');
     };
 
-    // 編輯
-    function editItem() {
-      const editItemList = document.querySelectorAll('.editItem');
-      groupTitle.textContent = '編輯集團及事業部資料';
-      editItemList.forEach(item => {
-        const groupName = document.querySelector('#groupName');
-        const departList = document.querySelector('#departList');  
-        
-        groupName.value = '台灣塑膠';
-        departList.innerHTML = `
-          <tr>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="1">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="塑膠部">
-            </td>                    
-            <td class="text-center">
-              <button type="button" class="delDepartItem my-1 px-3 btn btn-sm tfb__btn-red" onclick="delDepart(event)">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="7">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="塑膠加工部">
-            </td>                    
-            <td class="text-center">
-              <button type="button" class="delDepartItem my-1 px-3 btn btn-sm tfb__btn-red" onclick="delDepart(event)">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="8">
-            </td>
-            <td>
-              <input class="form-control form-control-sm" type="text" value="聚烯部">
-            </td>                    
-            <td class="text-center">
-              <button type="button" class="delDepartItem my-1 px-3 btn btn-sm tfb__btn-red" onclick="delDepart(event)">
-                <span class="mdi mdi-trash-can-outline"></span>
-                刪除
-              </button>
-            </td>
-          </tr>
-        `;
+    const addItemList = document.querySelectorAll('.addItem');
+    const editItemList = document.querySelectorAll('.editItem');
+    const divisionNo = document.querySelector('#divisionNo');
+    const divisionName = document.querySelector('#divisionName');
+    const divisionTitle = document.querySelector('#divisionTitle');
+    // 新增事業部
+    addItemList.forEach((addItem) => {
+      addItem.addEventListener('click', () => {
+        divisionTitle.textContent = '新增事業部';
+        divisionNo.value = '';
+        divisionName.value = '';
+      })
+    });
+
+    // 編輯事業部
+    editItemList.forEach((editItem) => {
+      const data = ['1', '塑膠部'];
+      editItem.addEventListener('click', () => {
+        divisionTitle.textContent = '編輯事業部';
+        divisionNo.value = data[0];
+        divisionName.value = data[1];
+      });      
+    });
+
+    // divisionConfirm button Handler
+    function divisionConfirm() {
+      const divisionModal = document.querySelector('#divisionModal');
+      $(divisionModal).modal('hide');
+    };
+
+    // modalConfirm button Handler
+    const groupModal = document.querySelector('#groupModal');
+    const modalConfirmList = document.querySelectorAll('#modalConfirm');
+    modalConfirmList.forEach(item => {
+      item.addEventListener('click', () => {
+        $(groupModal).modal('hide');
       });
-    }
+    });
   </script>
 
   <!-- delModal -->
@@ -383,7 +948,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content tfb__modal">
         <div class="modal-body bg-light">            
-          <p class="mb-2 py-3 fs-5 fw-bolder text-center">
+          <p id="delText" class="mb-2 py-3 fs-5 fw-bolder text-center">
             確認刪除所選取的資料?
           </p>
         </div>
@@ -398,13 +963,24 @@
   <script>
     // modalConfirm button Handler
     const delModal = document.querySelector('#delModal');
-    const modalDelConfirm = document.querySelector('#modalDelConfirm');
-    modalDelConfirm.addEventListener('click', () => {
-      $(delModal).modal('hide');
-    })  
+    const modalDelConfirmList = document.querySelectorAll('#modalDelConfirm');
+    const delText = document.querySelector('#delText');
+    modalDelConfirmList.forEach(item => {
+      item.addEventListener('click', () => {
+        $(delModal).modal('hide');
+      })
+    });
+
+    function delHandler(type) {
+      if (type === 'group') {
+        delText.textContent = '確認刪除所選取的集團及事業部?';
+      };
+      if (type === 'item') {
+        delText.textContent = '確認刪除所選取的資料?';
+      };
+    };
   </script>
-  
-  <!-- 台塑網平台之集團及事業部 -->
+  <!-- 台塑集團及事業部 -->
   <script src="../js/bootstrap.bundle.min.js"></script>  
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="../js/page.js"></script>
