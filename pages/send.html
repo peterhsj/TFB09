@@ -23,7 +23,7 @@
     </nav>
     <h1 class="pt-4 pb-2 fs-4 fw-bolder">系統傳送紀錄</h1>
     <div class="py-2">
-      <button type="button" id="reSendItem" class="px-3 btn btn-sm tfb__btn-default">
+      <button type="button" id="reSendItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#resendModal">
         <span class="mdi mdi-refresh"></span>
         重送
       </button>
@@ -666,6 +666,24 @@
       </div>
     </div>
   </div>
+
+  
+  <!-- resendModal -->
+  <div class="modal fade" id="resendModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content tfb__modal">
+        <div class="modal-body bg-light">            
+          <p id="delText" class="mb-2 py-3 fs-5 fw-bolder text-center">
+            訊息已重送
+          </p>
+        </div>
+        <div class="modal-footer justify-content-center border-top-0">
+          <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- JS -->
   <script>
     const negoModal = document.querySelector('#negoModal');
