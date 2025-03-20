@@ -10,23 +10,17 @@
 </head>
 
 <body>
-  <!-- 分行資料維護 -->
+  <!-- 分行資料查詢 -->
   <div id="branchManager" class="py-4 px-5">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
       <ol class="breadcrumb fs-6">
         <li class="breadcrumb-item">
           <a id="homePage" class="tfb__path" href="javascript:void(0)">首頁</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">分行資料維護</li>
+        <li class="breadcrumb-item active" aria-current="page">分行資料查詢</li>
       </ol>
     </nav>
     <h1 class="fs-4 fw-bolder">分行資料</h1>
-    <div class="py-2 text-end">
-      <button type="button" id="addItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#branchModal">
-        <span class="mdi mdi-plus"></span>
-        新增
-      </button>
-    </div>
     <div class="table-responsive">
       <table class="mb-0 table table-striped table-sm tfb__table">
         <thead>
@@ -35,7 +29,6 @@
             <th scope="col" class="tfb__tbhd">分行名稱</th>
             <th scope="col" class="tfb__tbhd">分行地址</th>
             <th scope="col" class="tfb__tbhd">分行電話</th>
-            <th scope="col" class="tfb__tbhd">功能</th>
           </tr>
         </thead>
         <tbody>
@@ -44,48 +37,24 @@
             <td class="text-center">松山分行</td>
             <td>台北市松山區123號</td>
             <td>02-22777777</td>
-            <td class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#branchModal">
-                <span class="mdi mdi-pencil"></span>
-                編輯
-              </button>
-            </td>
           </tr>
           <tr>
             <td class="text-center">3390</td>
             <td class="text-center">高雄分行</td>
             <td>高雄市小港區大大路100號</td>
             <td>07-88168818</td>
-            <td class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#branchModal">
-                <span class="mdi mdi-pencil"></span>
-                編輯
-              </button>
-            </td>
           </tr>
           <tr>
             <td class="text-center">8801</td>
             <td class="text-center">新竹分行</td>
             <td>新竹市東大路300號</td>
             <td>03-3969899</td>
-            <td class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#branchModal">
-                <span class="mdi mdi-pencil"></span>
-                編輯
-              </button>
-            </td>
           </tr>
           <tr>
             <td class="text-center">0001</td>
             <td class="text-center">台北分行</td>
             <td>台北市重慶南路一段99號</td>
             <td>02-77666666</td>
-            <td class="text-center">
-              <button type="button" class="editItem px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#branchModal">
-                <span class="mdi mdi-pencil"></span>
-                編輯
-              </button>
-            </td>
           </tr>
           
         </tbody>
@@ -270,7 +239,7 @@
     
     </script>
   </div>
-  <!-- 分行資料維護 -->
+  <!-- 分行資料查詢 -->
   <script src="../js/bootstrap.bundle.min.js"></script>  
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="../js/page.js"></script>

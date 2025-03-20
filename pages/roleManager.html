@@ -174,13 +174,13 @@
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option21" value="option21">
                         <label class="form-check-label" for="option21">
-                          受理押匯審核
+                          受理押匯作業
                         </label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option22" value="option22">
                         <label class="form-check-label" for="option22">
-                          審核押匯審核
+                          審核押匯作業
                         </label>
                       </div>
                     </div>
@@ -190,15 +190,15 @@
                     <div class="col-10 py-1">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option31" value="option31">
-                        <label class="form-check-label" for="option31">台塑網平台之集團及事業部</label>
+                        <label class="form-check-label" for="option31">台塑集團及事業部</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option32" value="option32">
-                        <label class="form-check-label" for="option32">台塑網平台e化集團受益人</label>
+                        <label class="form-check-label" for="option32">台塑集團受益人</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option33" value="option33">
-                        <label class="form-check-label" for="option33">台塑網平台之企業信用狀統計表</label>
+                        <label class="form-check-label" for="option33">台塑集團信用狀統計表</label>
                       </div>
                     </div>
                     <div class="col-2 text-end text-nowrap py-1">
@@ -215,6 +215,17 @@
                       </div>
                     </div>
                     <div class="col-2 text-end text-nowrap py-1">
+                      角色維護
+                    </div>
+                    <div class="col-10 py-1">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="option52" value="option52">
+                        <label class="form-check-label" for="option52">
+                          角色維護
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-2 text-end text-nowrap py-1">
                       帳號維護
                     </div>
                     <div class="col-10 py-1">
@@ -226,23 +237,13 @@
                       </div>
                     </div>
                     <div class="col-2 text-end text-nowrap py-1">
-                      角色維護
-                    </div>
-                    <div class="col-10 py-1">
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="option52" value="option52">
-                        <label class="form-check-label" for="option52">
-                          角色維護
-                        </label>
-                      </div>
-                    </div><div class="col-2 text-end text-nowrap py-1">
-                      分行資料維護
+                      分行資料查詢
                     </div>
                     <div class="col-10 py-1">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="option53" value="option53">
                         <label class="form-check-label" for="option53">
-                          分行資料維護
+                          分行資料查詢
                         </label>
                       </div>
                     </div>
@@ -279,6 +280,7 @@
       roleManagerTitle.textContent = '新增角色及權限設定';
       roleTitle.textContent = '角色設定';
       domList[0].value = '由系統產生';
+      domList[1].value = '';
       domList[1].removeAttribute('readonly');
       domList[1].removeAttribute('disabled');
     })
