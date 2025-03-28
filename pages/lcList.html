@@ -40,11 +40,13 @@
           </div>
           <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-2 row">
-              <label for="status" class="col-2 col-md-3 col-form-label text-end text-nowrap">狀態</label>
+              <label for="status" class="col-2 col-md-3 col-form-label text-end text-nowrap">信用狀狀態</label>
               <div class="col-10 col-md-9">
                 <select id="branchNo" class="form-select">
                   <option selected>= 請選擇 =</option>
-                  <option value="0001"></option>
+                  <option value="1">有效</option>
+                  <option value="2">到期</option>
+                  <option value="3">沖正</option>
                 </select>
               </div>
             </div>
@@ -71,7 +73,7 @@
         <div class="row">
           <div class="col-12 col-md-6 col-lg-4">
             <div class="row">
-              <label for="appDate" class="col-2 col-md-3 col-form-label text-end text-nowrap">申請日期</label>
+              <label for="appDate" class="col-2 col-md-3 col-form-label text-end text-nowrap">開狀日期</label>
               <div class="col-10 col-md-9">
                 <div class="d-flex align-items-center">                  
                   <div class="input-group flex-nowrap">
@@ -124,11 +126,11 @@
           <thead>
             <tr>
               <th scope="col" class="tfb__tbhd text-nowrap">開狀銀行</th>
-              <th scope="col" class="tfb__tbhd text-nowrap">開狀人統一編號</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
               <th scope="col" class="tfb__tbhd">信用狀號碼</th>
               <th scope="col" class="tfb__tbhd">信用狀序號</th>
               <th scope="col" class="tfb__tbhd">幣別 / 金額</th>
-              <th scope="col" class="tfb__tbhd text-nowrap">開狀申請時間</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
               <th scope="col" class="tfb__tbhd">功能</th>
             </tr>
           </thead>
@@ -248,6 +250,14 @@
             <div class="table-responsive">
               <table class="table table-sm tfb__table">
                 <tbody>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">信用狀狀態</th>
+                    <td class="bg-white">
+                      有效
+                    </td>
+                    <th class="tfb__tbhd2 w-15"></th>
+                    <td class="bg-white"></td>
+                  </tr>
                   <tr>
                     <th class="tfb__tbhd2 w-15">受益人接收狀態</th>
                     <td class="bg-white">
