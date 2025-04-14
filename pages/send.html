@@ -21,7 +21,7 @@
         <li class="breadcrumb-item active" aria-current="page">系統傳送紀錄</li>
       </ol>
     </nav>
-    <h1 class="pt-4 pb-2 fs-4 fw-bolder">系統傳送紀錄</h1>
+    <h1 class="pt-4 pb-2 fs-4 fw-bolder">傳送失敗紀錄</h1>
     <div class="py-2">
       <button type="button" id="reSendItem" class="px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#resendModal">
         <span class="mdi mdi-refresh"></span>
@@ -38,10 +38,8 @@
             <th scope="col" class="tfb__tbhd">
               <input class="form-check-input" type="checkbox" id="checkAll" value="true">
             </th>
-            <th scope="col" class="tfb__tbhd text-nowrap">序號</th>
             <th scope="col" class="tfb__tbhd text-nowrap">類型</th>
-            <th scope="col" class="tfb__tbhd">申請書/押匯編號</th>
-            <th scope="col" class="tfb__tbhd text-nowrap">審核結果</th>
+            <th scope="col" class="tfb__tbhd">信用狀號碼/匯票號碼</th>
             <th scope="col" class="tfb__tbhd">前次傳送時間</th>
             <th scope="col" class="tfb__tbhd">錯誤原因</th>
           </tr>
@@ -51,10 +49,8 @@
             <td class="text-center">
               <input class="form-check-input" type="checkbox" id="check1" value="1">
             </td>
-            <td class="text-center">1</td>
-            <td class="text-center">修改</td>
-            <td><a href="javascript:void(0)" class="tfb__link-text" onclick="appModal()">LCDSD111000068-A-03</a></td>
-            <td class="text-center">核准</td>
+            <td class="text-center">信用狀通知</td>
+            <td><a href="javascript:void(0)" class="tfb__link-text" onclick="lcModalHandler()">ATAT5LS0000123-001</a></td>
             <td class="text-center">2025/02/07 16:50:21</td>
             <td>重送發生錯誤，請洽系統管理員</td>
           </tr>
@@ -62,10 +58,8 @@
             <td class="text-center">
               <input class="form-check-input" type="checkbox" id="check1" value="1">
             </td>
-            <td class="text-center">1</td>
-            <td class="text-center">修改</td>
-            <td><a href="javascript:void(0)" class="tfb__link-text" onclick="appModal()">LCDSD111000068-A-03</a></td>
-            <td class="text-center">核准</td>
+            <td class="text-center">押匯狀態異動</td>
+            <td><a href="javascript:void(0)" class="tfb__link-text" onclick="negeModalHandler()">JF24111101</a></td>
             <td class="text-center">2025/02/07 16:50:21</td>
             <td>重送發生錯誤，請洽系統管理員</td>
           </tr>
@@ -73,10 +67,8 @@
             <td class="text-center">
               <input class="form-check-input" type="checkbox" id="check1" value="1">
             </td>
-            <td class="text-center">1</td>
-            <td class="text-center">修改</td>
-            <td><a href="javascript:void(0)" class="tfb__link-text" onclick="appModal()">LCDSD111000068-A-03</a></td>
-            <td class="text-center">核准</td>
+            <td class="text-center">押匯重新提示</td>
+            <td>ATAT5LS0000123-001-005</td>
             <td class="text-center">2025/02/07 16:50:21</td>
             <td>重送發生錯誤，請洽系統管理員</td>
           </tr>
@@ -122,12 +114,12 @@
   </div>
   <!-- 系統傳送紀錄 -->
 
-  <!-- negoModal -->
+  <!-- 匯票資訊 negoModal -->
   <div class="modal fade" id="negoModal" tabindex="-1" aria-labelledby="negoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content tfb__modal">
         <div class="modal-header px-5">
-          <h1 class="mb-0 fs-4 fw-bolder">押匯申請</h1>
+          <h1 class="mb-0 fs-4 fw-bolder">匯票資訊</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body bg-light px-5">
@@ -179,73 +171,9 @@
                     </button>
                   </td>
                 </tr>
-                <tr>
-                  <td class="text-center">2025/02/07</td>
-                  <td class="text-center">
-                    <a href="javascript:void(0)" class="tfb__link-text" data-bs-toggle="modal" data-bs-target="#draftModalSub">
-                      JF24111102
-                    </a>
-                  </td>
-                  <td class="text-end">$10,000</td>
-                  <td class="text-center"></td>
-                  <td>
-                    <div class="py-1">台灣塑膠工業股份有限公司</div>
-                    <div class="py-1">84613756</div>
-                  </td>
-                  <td>
-                    <div class="py-1">台灣塑膠工業股份有限公司</div>
-                    <div class="py-1">84613756</div>
-                  </td>
-                  <td>
-                    <div class="py-1">LC113A-99123</div>
-                    <div class="py-1">2025/02/09</div>                
-                  </td>
-                  <td class="text-center">
-                    <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default" data-bs-toggle="modal" data-bs-target="#detailModalSub">                  
-                      <span class="mdi mdi-note-text"></span>
-                      明細
-                    </button>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
-          <nav class="mt-3 d-flex align-items-center justify-content-between">
-            <div class="d-flex text-nowrap">
-              <ul class="pagination pagination-sm">
-                <li class="page-item tfb__page-item disabled">
-                  <a class="page-link">第一頁</a>
-                </li>
-                <li class="page-item tfb__page-item disabled">
-                  <a class="page-link">
-                    <span class="mdi mdi-chevron-left"></span>
-                  </a>
-                </li>
-                <li class="page-item tfb__page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item tfb__page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item tfb__page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item tfb__page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item tfb__page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item tfb__page-item">
-                  <a class="page-link" href="#">
-                    <span class="mdi mdi-chevron-right"></span>
-                  </a>
-                </li>
-                <li class="page-item tfb__page-item">
-                  <a class="page-link" href="#">最後一頁</a>
-                </li>
-              </ul>
-              <div class="input-group input-group-sm ms-2 mb-3 text-nowrap page-width">
-                <span class="input-group-text" id="inputGroup-sizing-sm">第</span>
-                <input type="text" class="form-control" value="">
-                <span class="input-group-text" id="inputGroup-sizing-sm">頁</span>
-                <button class="btn tfb__btn-default" type="button" id="button-addon2">前往</button>
-              </div>
-            </div>
-            <div class="mb-3">
-              <span class="tfb__text">總筆數：</span>2 / <span class="tfb__text">總頁數：</span>1
-            </div>
-          </nav>
         </div>
         <div class="modal-footer justify-content-center border-top-0">
           <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">關閉</button>
@@ -260,7 +188,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content tfb__modal">
         <div class="modal-header py-2 border-bottom-0">
-          <h5 class="modal-title fs-5 fw-bolder" id="beneficiaryModalLabel">
+          <h5 class="modal-title fs-5 fw-bolder" id="draftModalLabel">
             匯票資料
           </h5>
           <button type="button" class="m-0 p-0 btn-close tfb__btn-close" aria-label="Close" data-bs-toggle="modal" data-bs-target="#negoModal"></button>
@@ -665,8 +593,288 @@
         </form>
       </div>
     </div>
+  </div>  
+
+  <!-- 信用狀資訊 lcModal -->
+   <div class="modal fade" id="lcModal" tabindex="-1" aria-labelledby="lcModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content tfb__modal">
+        <div class="modal-header px-5">
+          <h1 class="mb-0 fs-4 fw-bolder">信用狀資訊</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-light px-5">
+          <div class="table-responsive">
+        <table class="mb-0 table table-striped table-sm tfb__table">
+          <thead>
+            <tr>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀銀行</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">申請人統編</th>
+              <th scope="col" class="tfb__tbhd">信用狀號碼</th>
+              <th scope="col" class="tfb__tbhd">信用狀序號</th>
+              <th scope="col" class="tfb__tbhd">幣別 / 金額</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">開狀日期</th>
+              <th scope="col" class="tfb__tbhd text-nowrap">信用狀狀態</th>
+              <th scope="col" class="tfb__tbhd">功能</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">台北分行</td>
+              <td class="text-center">12345678</td>
+              <td class="text-center">ATAT5LS0000123-001</td>
+              <td class="text-center">A12346678001</td>
+              <td>
+                <div class="d-flex justify-content-between">
+                  <span class="me-2">TWD</span>
+                  <span>$20,000.00</span>
+                </div>
+              </td>
+              <td class="text-center">2025/01/20</td>
+              <td class="text-center">有效</td>
+
+              <td class="text-center">
+                <button type="button" class="editItem my-1 px-3 btn btn-sm tfb__btn-default text-nowrap" data-bs-toggle="modal" data-bs-target="#lcDetailModal">                  
+                  <span class="mdi mdi-note-text"></span>
+                  明細
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        </div>
+        <div class="modal-footer justify-content-center border-top-0">
+          <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- 信用狀詳細資料 lcDetailModal -->
+  <div class="modal fade" id="lcDetailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="lcDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content tfb__modal">
+        <form id="accountManagerForm">
+          <div class="modal-header py-2 border-bottom-0">
+            <h5 class="modal-title fs-5 fw-bolder" id="lcDetailModalLabel">
+              信用狀詳細資訊
+            </h5>
+            <button type="button" class="m-0 p-0 btn-close tfb__btn-close" aria-label="Close" data-bs-toggle="modal" data-bs-target="#lcModal"></button>
+          </div>
+          <div class="modal-body bg-light">
+            <div class="table-responsive">
+              <table class="table table-sm tfb__table">
+                <tbody>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">信用狀狀態</th>
+                    <td class="bg-white">
+                      有效
+                    </td>
+                    <th class="tfb__tbhd2 w-15"></th>
+                    <td class="bg-white"></td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">受益人接收狀態</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">開狀銀行</th>
+                    <td class="bg-white">
+                      台北分行
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">開狀人統一編號</th>
+                    <td class="bg-white">
+                      12345678
+                    </td>
+                    <th class="tfb__tbhd2 w-15">客戶公司中文名稱</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX有限公司
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">聯絡人姓名</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">聯絡人電話</th>
+                    <td class="bg-white">
+                      0212345678
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">受益人統一編號</th>
+                    <td class="bg-white">
+                      12345678
+                    </td>
+                    <th class="tfb__tbhd2 w-15">受益人公司中文名稱</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX有限公司
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">受益人事業部</th>
+                    <td class="bg-white">
+                      XXXX部部
+                    </td>
+                    <th class="tfb__tbhd2 w-15">受益人地址</th>
+                    <td class="bg-white">
+                      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">客戶編號</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">金額</th>
+                    <td class="bg-white">
+                      20,000
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">信用狀號碼</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">信用狀序號</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">有效期限</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">幣別</th>
+                    <td class="bg-white">
+                      TWD - 新台幣
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">品名內容</th>
+                    <td class="bg-white">
+                      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">押匯銀行</th>
+                    <td class="bg-white">
+                      台北分行
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">付款方式</th>
+                    <td class="bg-white">
+                      現金
+                    </td>
+                    <th class="tfb__tbhd2 w-15">付款天數</th>
+                    <td class="bg-white">
+                      2
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">分批註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">交貨到期日</th>
+                    <td class="bg-white">
+                      2025/01/20
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">發票日期註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">發票金額註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">發票地址註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">匯票註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">客戶申請說明</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">開狀申請時間</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">銀行審核時間</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">銀行審核說明</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">傳送時間</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">電子發票註記</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">指定匯票到期日</th>
+                    <td class="bg-white">
+                      2025/01/20
+                    </td>
+                    <th class="tfb__tbhd2 w-15">指定押匯日</th>
+                    <td class="bg-white">
+                      2025/01/20
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">押匯允差比例</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                    <th class="tfb__tbhd2 w-15">匯票起算基準</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="tfb__tbhd2 w-15">發票起始開立日</th>
+                    <td class="bg-white">
+                      2025/01/20
+                    </td>
+                    <th class="tfb__tbhd2 w-15">通知銀行</th>
+                    <td class="bg-white">
+                      XXXXXXXXXX
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center border-top-0">
+            <button type="button" class="px-3 btn border-1 tfb__btn-cancel" data-bs-toggle="modal" data-bs-target="#lcModal">關閉</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   
   <!-- resendModal -->
   <div class="modal fade" id="resendModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="resendModalLabel" aria-hidden="true">
@@ -686,24 +894,15 @@
   
   <!-- JS -->
   <script>
-    const negoModal = document.querySelector('#negoModal');
-    const appModal = () => {
-      $(negoModal).modal('show');
+    function negeModalHandler () {
+        const negoModal = document.querySelector('#negoModal');
+        $(negoModal).modal('show');
     };
-
-    const draftModalSub = document.querySelector('#draftModalSub');
-    const openDraftModal = () => {
-      $(draftModalSub).modal('show');
-    }
-    const closeDraftModal = () => {
-      $(draftModalSub).modal('hide');
-    }
-
-    const detailModalSub = document.querySelector('#detailModalSub');
-    const openDetailModal = () => {
-      console.log({detailModalSub})
-      $(detailModalSub).modal('show');
-    }
+    
+    function lcModalHandler () {
+        const lcModal = document.querySelector('#lcModal');
+        $(lcModal).modal('show');
+    };
   </script>
   <script src="../js/bootstrap.bundle.min.js"></script>  
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
